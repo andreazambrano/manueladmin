@@ -1,0 +1,12 @@
+// //
+// // formm-wizard.scss
+// //
+@import "~angular-archwizard/archwizard.css";
+
+.steps-indicator {
+  display: none !important;
+}
+.form-wizard-header {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}

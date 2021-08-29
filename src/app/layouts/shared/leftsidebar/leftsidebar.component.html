@@ -1,0 +1,62 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left-side-menu">
+  <div class="media user-profile mt-2 mb-2">
+    <img src="assets/images/users/avatar-7.jpg" class="avatar-sm rounded-circle mr-2" alt="Shreyu">
+    <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-2" alt="Shreyu">
+
+    <div class="media-body">
+      <h6 class="pro-user-name mt-0 mb-0">Dental24+</h6>
+      <span class="pro-user-desc">Administrator</span>
+    </div>
+    <div class="dropdown align-self-center profile-dropdown-menu" ngbDropdown>
+      <a class="dropdown-toggle mr-0" ngbDropdownToggle href="javascript: void(0);">
+        <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+      </a>
+      <div class="dropdown-menu profile-dropdown" ngbDropdownMenu>
+        <a routerLink="/pages-profile" class="dropdown-item notify-item">
+          <i [attr.data-feather]="'user'" class="icon-dual icon-xs mr-2"></i>
+          <span>&nbsp;My Account</span>
+        </a>
+
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+          <i [attr.data-feather]="'settings'" class="icon-dual icon-xs mr-2"></i>
+          <span>&nbsp;Settings</span>
+        </a>
+
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+          <i [attr.data-feather]="'help-circle'" class="icon-dual icon-xs mr-2"></i>
+          <span>&nbsp;Support</span>
+        </a>
+
+        <a href="javascript: void(0);" class="dropdown-item notify-item">
+          <i [attr.data-feather]="'lock'" class="icon-dual icon-xs mr-2"></i>
+          <span>&nbsp;Lock Screen</span>
+        </a>
+
+        <div class="dropdown-divider"></div>
+
+        <a href="javascript:void(0);" class="dropdown-item notify-item" (click)="logout()">
+          <i [attr.data-feather]="'log-out'" class="icon-dual icon-xs mr-2"></i>
+          <span>&nbsp;Logout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sidebar-content">
+    <!--- Sidemenu -->
+    <div class="h-100" appSlimScroll *ngIf="!isSidebarCondensed()">
+      <app-menu id="sidebar-menu"></app-menu>
+    </div>
+
+    <div *ngIf="isSidebarCondensed()">
+      <app-menu id="sidebar-menu"></app-menu>
+    </div>
+
+    <!-- End Sidebar -->
+    <div class="clearfix"></div>
+  </div>
+  <!-- Sidebar -left -->
+</div>
+<!-- Left Sidebar End -->

@@ -1,0 +1,41 @@
+//
+// datatable.scss
+//
+
+.datatables {
+  thead {
+    tr {
+      th {
+        position: relative;
+        &:before {
+          content: "\e831";
+          position: absolute;
+          right: 0;
+          top: 7px;
+          font: normal normal normal 24px/1 "unicons";
+          opacity: 0.3;
+        }
+        &:after {
+          content: "\e82d";
+          position: absolute;
+          right: 0;
+          top: 14px;
+          opacity: 0.3;
+          font: normal normal normal 24px/1 "unicons";
+        }
+      }
+
+      .asc {
+        &:before {
+          opacity: 1;
+        }
+      }
+
+      .desc {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

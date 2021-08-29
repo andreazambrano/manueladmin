@@ -1,0 +1,54 @@
+<div class="container-fluid">
+
+  <app-page-title title="" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+
+  <div class="row">
+  
+
+    <div class="col-xl-12 col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <a  class="btn btn-primary btn-sm float-right">
+            <i class="uil uil-export ml-1"></i>Agregar Especialiadad
+          </a>
+      <!--     <a routerLink="../newproject" class="btn btn-primary btn-sm float-right">
+            <i class="uil uil-export ml-1"></i> New project
+          </a> -->
+          <h5 class="card-title header-title mt-0 mb-0">Especialidades </h5>
+          <div class="table-responsive mt-4">
+            <table class="table table-hover table-nowrap mb-0">
+              <thead>
+                <tr>
+            <!--       <th scope="col">#</th> -->
+                <!--   <th scope="col">.</th> -->
+ 
+                <!--   <th scope="col">Customer</th>
+                  <th scope="col">Price</th> -->
+                  <!-- <th scope="col">Estado de solicitud</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let spec of specs" >
+                  <!-- <td>{{ table.id }}</td> -->
+                 <td>
+                    <div class="chat-avatar" >
+                     
+                  {{ spec.name }}
+                    </div> 
+                  </td>
+               
+                 <!--  <td>{{ table.name }}</td>
+                  <td>{{ table.price }}</td> -->
+                 <!--  <td><span >{{user.status}}</span></td> -->
+                </tr>
+
+              </tbody>
+            </table>
+          </div><!-- end table -->
+        </div><!-- end card-body -->
+      </div><!-- end card -->
+    </div>
+  </div>
+
+</div>

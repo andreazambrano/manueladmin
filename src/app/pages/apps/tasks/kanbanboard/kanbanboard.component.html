@@ -1,0 +1,174 @@
+<div class="container-fluid">
+    <app-page-title title="Project Tasks Board" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <label class="font-weight-bold d-inline mr-2">
+                                <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>
+                                Project:
+                            </label>
+                            <div class="dropdown d-inline" ngbDropdown>
+                                <a class="font-weight-bold dropdown-toggle" href="javascript: void(0);" role="button"
+                                    id="dropdownMenuLink" ngbDropdownToggle>
+                                    Shreyu Design
+                                    <i class='uil uil-angle-down font-size-16 align-middle'></i>
+                                </a>
+
+                                <div class="dropdown-menu" ngbDropdownMenu>
+                                    <a class="dropdown-item" href="javascript: void(0);">
+                                        <i class="icon-dual icon-xs mr-2" data-feather="hard-drive"></i>Shreyu
+                                        Design
+                                    </a>
+                                    <a class="dropdown-item" href="javascript: void(0);">
+                                        <i class="icon-dual icon-xs mr-2" data-feather="briefcase"></i>
+                                        Development
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript: void(0);">
+                                        <i class="icon-dual icon-xs mr-2" data-feather="folder-plus">
+                                        </i>Shreyu
+                                        Angular
+                                    </a>
+                                    <a class="dropdown-item" href="javascript: void(0);">
+                                        <i class="icon-dual icon-xs mr-2" data-feather="folder-plus">
+                                        </i>Shreyu
+                                        React
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-right">
+                            <button class="btn btn-primary" id="btn-new-event"><i class="uil-plus mr-1"></i>Add
+                                New</button>
+                        </div>
+                    </div>
+                </div> <!-- end card body-->
+            </div> <!-- end card -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="board">
+                <div class="tasks border">
+                    <h5 class="mt-0 task-header font-size-18">Todo <span class="font-size-13">(3)</span>
+                    </h5>
+
+                    <div class="task-list-items list-unstyled" id="todo" dndDropzone dndEffectAllowed="move"
+                        (dndDrop)="onDrop($event, todoTasks, 'todo')">
+                        <li class="dndPlaceholder" dndPlaceholderRef></li>
+                        <ng-container *ngFor="let task of todoTasks">
+                            <li [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, todoTasks)">
+                                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                                </ng-template>
+                            </li>
+                        </ng-container>
+                    </div>
+                </div>
+
+                <!-- Progress  -->
+                <div class="tasks border">
+                    <h5 class="mt-0 task-header font-size-15">In Progress <span class="font-size-13">(2)</span>
+                    </h5>
+                    <div class="task-list-items list-unstyled" id="inprogress" dndDropzone dndEffectAllowed="move"
+                        (dndDrop)="onDrop($event, inprogressTasks, 'inprogress')">
+                        <li class="dndPlaceholder" dndPlaceholderRef></li>
+                        <ng-container *ngFor="let task of inprogressTasks">
+                            <li [dndDraggable]="task" dndEffectAllowed="move"
+                                (dndMoved)="onDragged(task, inprogressTasks)">
+                                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                                </ng-template>
+                            </li>
+                        </ng-container>
+                    </div>
+                </div> <!-- end tasks -->
+                <!-- End progress -->
+
+                <div class="tasks border">
+                    <h5 class="mt-0 task-header font-size-15">Review <span class="font-size-13">(2)</span>
+                    </h5>
+                    <div class="task-list-items list-unstyled" id="review" dndDropzone dndEffectAllowed="move"
+                        (dndDrop)="onDrop($event, reviewTasks, 'review')">
+                        <li class="dndPlaceholder" dndPlaceholderRef></li>
+                        <ng-container *ngFor="let task of reviewTasks">
+                            <li class="task-medium" [dndDraggable]="task" dndEffectAllowed="move"
+                                (dndMoved)="onDragged(task, reviewTasks)">
+                                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                                </ng-template>
+                            </li>
+                        </ng-container>
+                    </div>
+                </div> <!-- end tasks -->
+
+                <div class="tasks border">
+                    <h5 class="mt-0 task-header font-size-15">Done <span class="font-size-13">(1)</span>
+                    </h5>
+                    <div class="task-list-items list-unstyled" id="done" dndDropzone dndEffectAllowed="move"
+                        (dndDrop)="onDrop($event, doneTasks, 'done')">
+                        <li class="dndPlaceholder" dndPlaceholderRef></li>
+                        <ng-container *ngFor="let task of doneTasks">
+                            <li class="task-medium" [dndDraggable]="task" dndEffectAllowed="move"
+                                (dndMoved)="onDragged(task, doneTasks)">
+                                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                                </ng-template>
+                            </li>
+                        </ng-container>
+                    </div>
+                </div> <!-- end tasks -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Task  -->
+<ng-template #TaskContent let-task='task'>
+    <div class="card border mb-0">
+        <div class="card-body p-3">
+            <div class="dropdown float-right" ngbDropdown>
+                <a href="javascript: void(0);" class="text-muted arrow-none" ngbDropdownToggle>
+                    <i class="uil uil-ellipsis-v font-size-14"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-user-plus mr-2"></i>Add
+                        People</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item text-warning"><i
+                            class="uil uil-exit mr-2"></i>Leave</a>
+                    <div class="dropdown-divider"></div>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item text-danger"><i
+                            class="uil uil-trash mr-2"></i>Delete</a>
+                </div>
+            </div> <!-- end dropdown -->
+            <h6 class="mt-0 mb-2 font-size-15">
+                <a href="javascript: void(0);" class="text-body">{{ task.title }}</a>
+            </h6>
+
+            <span class="badge" [ngClass]="{
+                'badge-soft-success': task.task === 'Low',
+                'badge-soft-warning': task.task === 'Medium',
+                'badge-soft-danger': task.task === 'High',
+                'badge-soft-info': task.task === 'Normal'
+            }">{{ task.task }}</span>
+
+            <p class="mb-0 mt-4">
+                <img src="{{ task.user }} " alt="user-img" class="avatar-xs rounded-circle mr-2" />
+
+                <span class="text-nowrap align-middle font-size-13 mr-2">
+                    <i class="uil uil-comments-alt text-muted mr-1"></i>{{ task.comments }}
+                </span>
+
+                <span class="text-nowrap align-middle font-size-13">
+                    <i class="uil uil-check-square mr-1 text-muted"></i>{{ task.donetask }}
+                </span>
+                <small class="float-right text-muted">{{ task.date }}</small>
+            </p>
+        </div>
+    </div>
+</ng-template>

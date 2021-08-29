@@ -1,0 +1,245 @@
+<div class="container-fluid">
+  <app-page-title title="Advanced Forms" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <!-- select -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mt-0 mb-1">NG Select</h4>
+          <p class="sub-header">
+            A lightweight plugin that replaces native select elements with customizable dropdowns.
+          </p>
+
+          <div class="row">
+            <div class="col-xl-6 col-sm-6">
+              <div class="form-group mt-3 mt-sm-0">
+                <label for="default">Default</label>
+                <ng-select [items]="selectValue"></ng-select>
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-sm-6">
+              <div class="form-group mt-3 mt-sm-0">
+                <label for="default">Multiple select</label>
+                <ng-select [items]="selectValue" [multiple]="true"></ng-select>
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- end card-body -->
+      </div> <!-- end card-->
+    </div> <!-- end col -->
+  </div>
+  <!-- end row -->
+  <div class="row">
+    <!-- Date picker -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mt-0 mb-1">Flatpickr - Date picker</h4>
+          <p class="sub-header">Examples of bootstrap datepicker.</p>
+
+          <div>
+            <div class="form-group mb-3">
+              <label>Basic</label>
+              <input type="text" id="basic-datepicker" class="form-control" placeholder="Basic datepicker" mwlFlatpickr
+                [convertModelValue]="true">
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Date & Time</label>
+              <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" mwlFlatpickr
+                [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-d H:i">
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Human-friendly Dates</label>
+              <input type="text" id="humanfd-datepicker" class="form-control" placeholder="October 9, 2018" mwlFlatpickr
+                [convertModelValue]="true" [altInput]="true" altInputClass="form-control" altFormat="F j, Y">
+            </div>
+
+            <div class="form-group mb-3">
+              <label>MinDate and MaxDate</label>
+              <input type="text" id="minmax-datepicker" class="form-control" placeholder="mindate - maxdate"
+                mwlFlatpickr [convertModelValue]="true" minDate="'2020-01'" maxDate="'2020-03'">
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Disabling dates</label>
+              <input type="text" id="disable-datepicker" class="form-control" placeholder="Disabling dates" mwlFlatpickr
+                [convertModelValue]="true" dateFormat="Y-m-d" [disable]="['2025-01-10','2025-01-21','2025-01-30']">
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Selecting multiple dates</label>
+              <input type="text" id="multiple-datepicker" class="form-control" placeholder="Multiple dates" mwlFlatpickr
+                dateFormat="Y-m-d" [convertModelValue]="true" mode="multiple">
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Selecting multiple dates - Conjunction</label>
+              <input type="text" id="conjunction-datepicker" class="form-control" placeholder="2018-10-10 :: 2018-10-11"
+                mwlFlatpickr dateFormat="Y-m-d" [convertModelValue]="true" mode="multiple" conjunction=" :: ">
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Range Calendar</label>
+              <input type="text" id="range-datepicker" class="form-control" placeholder="2018-10-03 to 2018-10-10"
+                mwlFlatpickr [convertModelValue]="true" mode="range">
+            </div>
+
+            <div class="form-group mb-0">
+              <label>Inline Calendar</label>
+              <input type="text" id="inline-datepicker" class="form-control" placeholder="Inline calendar" mwlFlatpickr
+                dateFormat="Y-m-d" [convertModelValue]="true" [inline]="true">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End datepicker -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mt-0 mb-1">Flatpickr - Time Picker</h4>
+          <p class="sub-header">A lightweight and powerful time picker</p>
+
+          <div class="form-group mb-3">
+            <label>Basic</label>
+            <input type="text" class="form-control" placeholder="Basic timepicker" mwlFlatpickr [noCalendar]="true"
+              [enableTime]="true" [dateFormat]="'H:i'">
+          </div>
+
+          <div class="form-group mb-3">
+            <label>24-hour Time Picker</label>
+            <input type="text" class="form-control" placeholder="16:21" mwlFlatpickr [noCalendar]="true"
+              [enableTime]="true" [dateFormat]="'H:i'" time_24hr="true">
+          </div>
+
+          <div class="form-group mb-3">
+            <label>Time Picker w/ Limits</label>
+            <input type="text" class="form-control" placeholder="Limits" mwlFlatpickr [noCalendar]="true"
+              [enableTime]="true" [dateFormat]="'H:i'" minDate="'16:00'" maxDate="'22:30'">
+          </div>
+
+          <div class="form-group mb-0">
+            <label>Preloading Time</label>
+            <input type="text" class="form-control" placeholder="Pick a time" mwlFlatpickr [noCalendar]="true"
+              [enableTime]="true" [dateFormat]="'H:i'">
+          </div>
+        </div>
+      </div> <!-- end card -->
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mt-0 mb-1">Colorpicker</h4>
+          <p class="sub-header">Bootstrap Colorpicker is a modular color picker plugin for Bootstrap 4</p>
+
+          <div class="form-group mb-3">
+            <label>Default</label>
+            <input type="text" class="form-control" placeholder="Basic colorpicker" [value]="defaultColor"
+              [(colorPicker)]="defaultColor" [cpPosition]="'bottom'">
+          </div>
+          <div class="form-group mb-3">
+            <label>Hexa Color</label>
+            <input type="text" class="form-control" [value]="color" [(colorPicker)]="color" [cpOutputFormat]="'hex'"
+              [cpPosition]="'bottom'">
+          </div>
+          <div class="form-group mb-3">
+            <label>As Component</label>
+            <div id="component-colorpicker" class="input-group" title="Using format option">
+              <input type="text" class="form-control input-lg" [value]="componentcolor" />
+              <span class="input-group-append">
+                <span class="input-group-text colorpicker-input-addon" [style.background]="componentcolor"
+                  [(colorPicker)]="componentcolor" [cpOutputFormat]="'rgba'" [cpPosition]="'left'"><i></i></span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group mb-0">
+            <label>Inline</label>
+            <span [style.background]="inlineColor" [cpToggle]="true" [cpDialogDisplay]="'inline'"
+              [(colorPicker)]="inlineColor"></span>
+          </div>
+        </div>
+
+      </div> <!-- end card -->
+
+    </div> <!-- end col -->
+  </div>
+
+  <!-- Form mask -->
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title mt-0 mb-1">Input Masks</h4>
+          <p class="sub-header">
+            Mask the input text based on various formats
+          </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <form action="#">
+                <div class="form-group">
+                  <label>Date</label>
+                  <input type="text" class="form-control" mask="00/00/0000">
+                  <span class="font-12 text-muted">e.g "DD/MM/YYYY"</span>
+                </div>
+                <div class="form-group">
+                  <label>Hour</label>
+                  <input type="text" class="form-control" mask="00:00:00">
+                  <span class="font-12 text-muted">e.g "HH:MM:SS"</span>
+                </div>
+                <div class="form-group">
+                  <label>Date & Hour</label>
+                  <input type="text" class="form-control" data-toggle="input-mask" mask="00/00/0000 00:00:00">
+                  <span class="font-12 text-muted">e.g "DD/MM/YYYY HH:MM:SS"</span>
+                </div>
+                <div class="form-group">
+                  <label>ZIP Code</label>
+                  <input type="text" class="form-control" mask="00000-000">
+                  <span class="font-12 text-muted">e.g "xxxxx-xxx"</span>
+                </div>
+                <div class="form-group">
+                  <label>Crazy Zip Code</label>
+                  <input type="text" class="form-control" mask="0-00-00-00">
+                  <span class="font-12 text-muted">e.g "x-xx-xx-xx"</span>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-6">
+              <form action="#">
+                <div class="form-group">
+                  <label>Money</label>
+                  <input type="text" class="form-control" mask="000.000.000.000.000,00">
+                  <span class="font-12 text-muted">e.g "Your money"</span>
+                </div>
+                <div class="form-group">
+                  <label>4 digit Group</label>
+                  <input type="text" class="form-control" mask="0,0000,0000,0000">
+                  <span class="font-12 text-muted">e.g. "x,xxxx,xxxx,xxxx"</span>
+                </div>
+                <div class="form-group">
+                  <label>Telephone</label>
+                  <input type="text" class="form-control" mask="0000-0000">
+                  <span class="font-12 text-muted">e.g "xxxx-xxxx"</span>
+                </div>
+                <div class="form-group">
+                  <label>Telephone with Code Area</label>
+                  <input type="text" class="form-control" mask="(00) 0000-0000">
+                  <span class="font-12 text-muted">e.g "(xx) xxxx-xxxx"</span>
+                </div>
+                <div class="form-group">
+                  <label>US Telephone</label>
+                  <input type="text" class="form-control" mask="(000) 000-0000">
+                  <span class="font-12 text-muted">e.g "(xxx) xxx-xxxx"</span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+</div>

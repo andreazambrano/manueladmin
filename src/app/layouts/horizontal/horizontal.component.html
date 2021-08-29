@@ -1,0 +1,14 @@
+<app-topbar (settingsButtonClicked)="onSettingsButtonClicked()" (mobileMenuButtonClicked)="onToggleMobileMenu()">
+</app-topbar>
+<div class="topnav shadow-sm">
+  <div class="container-fluid">
+    <nav class="navbar navbar-light navbar-expand-lg topbar-nav">
+      <div class="collapse navbar-collapse" id="topnav-menu-content" [ngbCollapse]="!isCollapsed">
+        <app-menu mode="horizontal"></app-menu>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- content -->
+<router-outlet></router-outlet>

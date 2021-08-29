@@ -1,0 +1,306 @@
+<div class="container-fluid">
+    <app-page-title title="Charts" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Line with Data Labels</h4>
+                    <!-- line with data labels chart -->
+                    <apx-chart class="apex-charts" [series]="linewithDataChart.series" [chart]="linewithDataChart.chart"
+                        [colors]="linewithDataChart.colors" [stroke]="linewithDataChart.stroke"
+                        [dataLabels]="linewithDataChart.dataLabels" [tooltip]="linewithDataChart.tooltip"
+                        [responsive]="linewithDataChart.responsive" [legend]="linewithDataChart.legend"
+                        [xaxis]="linewithDataChart.xaxis" [yaxis]="linewithDataChart.yaxis"
+                        [stroke]="linewithDataChart.stroke" [markers]="linewithDataChart.markers">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Gradient Line Chart</h4>
+                    <!-- Gradient Line Chart -->
+                    <apx-chart class="apex-charts" [series]="gradientLineChart.series" [chart]="gradientLineChart.chart"
+                        [stroke]="gradientLineChart.stroke" [title]="gradientLineChart.title"
+                        [tooltip]="gradientLineChart.tooltip" [grid]="gradientLineChart.grid"
+                        [responsive]="gradientLineChart.responsive" [xaxis]="gradientLineChart.xaxis"
+                        [yaxis]="gradientLineChart.yaxis" [markers]="gradientLineChart.markers"
+                        [fill]="gradientLineChart.fill">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Stacked Area</h4>
+                    <!-- Stacked Area chart -->
+                    <apx-chart class="apex-charts" [series]="stackedAreaChart.series" [chart]="stackedAreaChart.chart"
+                        [stroke]="stackedAreaChart.stroke" [dataLabels]="stackedAreaChart.dataLabels"
+                        [xaxis]="stackedAreaChart.xaxis" [legend]="stackedAreaChart.legend"
+                        [tooltip]="stackedAreaChart.tooltip" [colors]="stackedAreaChart.colors"
+                        [fill]="stackedAreaChart.fill"></apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Basic Column Chart</h4>
+                    <!-- Basic Column Chart -->
+                    <apx-chart class="apex-charts" [series]="basicColumChart.series" [chart]="basicColumChart.chart"
+                        [plotOptions]="basicColumChart.plotOptions" [yaxis]="basicColumChart.yaxis"
+                        [grid]="basicColumChart.grid" [tooltip]="basicColumChart.tooltip"
+                        [stroke]="basicColumChart.stroke" [dataLabels]="basicColumChart.dataLabels"
+                        [xaxis]="basicColumChart.xaxis" [legend]="basicColumChart.legend"
+                        [colors]="basicColumChart.colors" [fill]="basicColumChart.fill">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Column Chart with Datalabels</h4>
+                    <!-- Column Chart with Datalabels -->
+                    <apx-chart class="apex-charts" [series]="columnlabelChart.series" [chart]="columnlabelChart.chart"
+                        [plotOptions]="columnlabelChart.plotOptions" [yaxis]="columnlabelChart.yaxis"
+                        [grid]="columnlabelChart.grid" [tooltip]="columnlabelChart.tooltip"
+                        [stroke]="columnlabelChart.stroke" [dataLabels]="columnlabelChart.dataLabels"
+                        [xaxis]="columnlabelChart.xaxis" [legend]="columnlabelChart.legend"
+                        [colors]="columnlabelChart.colors" [fill]="columnlabelChart.fill">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Mixed Chart - Line & Area</h4>
+                    <!-- Mixed Chart - Line & Area -->
+                    <apx-chart class="apex-charts" [series]="mixedChart.series" [chart]="mixedChart.chart"
+                        [plotOptions]="mixedChart.plotOptions" [yaxis]="mixedChart.yaxis" [grid]="mixedChart.grid"
+                        [tooltip]="mixedChart.tooltip" [stroke]="mixedChart.stroke" [dataLabels]="mixedChart.dataLabels"
+                        [xaxis]="mixedChart.xaxis" [legend]="mixedChart.legend" [colors]="mixedChart.colors"
+                        [fill]="mixedChart.fill">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Basic Bar Chart</h4>
+                    <!-- Basic Bar Chart -->
+                    <apx-chart class="apex-charts" [series]="basicBarChart.series" [chart]="basicBarChart.chart"
+                        [plotOptions]="basicBarChart.plotOptions" [grid]="basicBarChart.grid"
+                        [states]="basicBarChart.states" [dataLabels]="basicBarChart.dataLabels"
+                        [xaxis]="basicBarChart.xaxis" [colors]="basicBarChart.colors">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Bar with Negative Values</h4>
+                    <!-- Bar with Negative Values -->
+                    <apx-chart class="apex-charts" [series]="nagativeValueBarChart.series"
+                        [chart]="nagativeValueBarChart.chart" [tooltip]="nagativeValueBarChart.tooltip"
+                        [xaxis]="nagativeValueBarChart.xaxis" [legend]="nagativeValueBarChart.legend"
+                        [plotOptions]="nagativeValueBarChart.plotOptions" [grid]="nagativeValueBarChart.grid"
+                        [stroke]="nagativeValueBarChart.stroke" [dataLabels]="nagativeValueBarChart.dataLabels"
+                        [yaxis]="nagativeValueBarChart.yaxis" [colors]="nagativeValueBarChart.colors">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Line, Column & Area Chart</h4>
+                    <!-- Line, Column & Area Chart -->
+                    <apx-chart [series]="lineColumAreaChart.series" [chart]="lineColumAreaChart.chart"
+                        [tooltip]="lineColumAreaChart.tooltip" [yaxis]="lineColumAreaChart.yaxis"
+                        [legend]="lineColumAreaChart.legend" [plotOptions]="lineColumAreaChart.plotOptions"
+                        [grid]="lineColumAreaChart.grid" [stroke]="lineColumAreaChart.stroke"
+                        [xaxis]="lineColumAreaChart.xaxis" [colors]="lineColumAreaChart.colors"
+                        [fill]="lineColumAreaChart.fill" [labels]="lineColumAreaChart.labels"
+                        [markers]="lineColumAreaChart.markers">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Multiple Y-Axis Chart</h4>
+                    <!-- Multiple Y-Axis Chart -->
+                    <apx-chart [series]="multipleYAxisChart.series" [chart]="multipleYAxisChart.chart"
+                        [tooltip]="multipleYAxisChart.tooltip" [yaxis]="multipleYAxisChart.yaxis"
+                        [legend]="multipleYAxisChart.legend" [grid]="multipleYAxisChart.grid"
+                        [dataLabels]="multipleYAxisChart.dataLabels" [stroke]="multipleYAxisChart.stroke"
+                        [xaxis]="multipleYAxisChart.xaxis" [colors]="multipleYAxisChart.colors"
+                        [responsive]="multipleYAxisChart.responsive">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Simple Bubble Chart</h4>
+                    <!-- Simple Bubble Chart -->
+                    <apx-chart [series]="simpleBubbleChart.series" [chart]="simpleBubbleChart.chart"
+                        [yaxis]="simpleBubbleChart.yaxis" [legend]="simpleBubbleChart.legend"
+                        [grid]="simpleBubbleChart.grid" [dataLabels]="simpleBubbleChart.dataLabels"
+                        [xaxis]="simpleBubbleChart.xaxis" [colors]="simpleBubbleChart.colors"
+                        [fill]="simpleBubbleChart.fill" [tooltip]="simpleBubbleChart.tooltip">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">3D Bubble Chart</h4>
+                    <!-- 3D Bubble Chart -->
+                    <apx-chart [series]="dBubbleChart.series" [chart]="dBubbleChart.chart" [yaxis]="dBubbleChart.yaxis"
+                        [legend]="dBubbleChart.legend" [grid]="dBubbleChart.grid" [dataLabels]="dBubbleChart.dataLabels"
+                        [xaxis]="dBubbleChart.xaxis" [colors]="dBubbleChart.colors" [fill]="dBubbleChart.fill"
+                        [tooltip]="dBubbleChart.tooltip">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Scatter (XY) Chart</h4>
+                    <!-- Scatter (XY) Chart -->
+                    <apx-chart [series]="scatterXYChart.series" [chart]="scatterXYChart.chart"
+                        [yaxis]="scatterXYChart.yaxis" [legend]="scatterXYChart.legend" [grid]="scatterXYChart.grid"
+                        [dataLabels]="scatterXYChart.dataLabels" [xaxis]="scatterXYChart.xaxis"
+                        [colors]="scatterXYChart.colors" [fill]="scatterXYChart.fill"
+                        [tooltip]="scatterXYChart.tooltip">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Scatter Chart - Datetime</h4>
+                    <!-- Scatter Chart - Datetime -->
+                    <apx-chart [series]="scatterChart.series" [chart]="scatterChart.chart" [yaxis]="scatterChart.yaxis"
+                        [legend]="scatterChart.legend" [grid]="scatterChart.grid" [dataLabels]="scatterChart.dataLabels"
+                        [xaxis]="scatterChart.xaxis" [colors]="scatterChart.colors" [fill]="scatterChart.fill"
+                        [tooltip]="scatterChart.tooltip">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Simple Pie Chart</h4>
+                    <!-- Simple Pie Chart -->
+                    <apx-chart [series]="simplePieChart.series" [chart]="simplePieChart.chart"
+                        [labels]="simplePieChart.labels" [dataLabels]="simplePieChart.dataLabels"
+                        [legend]="simplePieChart.legend" [colors]="simplePieChart.colors"
+                        [responsive]="simplePieChart.responsive">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Gradient Donut Chart</h4>
+                    <!-- Gradient Donut Chart -->
+                    <apx-chart [series]="gradientDonutChart.series" [chart]="gradientDonutChart.chart"
+                        [dataLabels]="gradientDonutChart.dataLabels" [labels]="gradientDonutChart.labels"
+                        [legend]="gradientDonutChart.legend" [colors]="gradientDonutChart.colors"
+                        [responsive]="gradientDonutChart.responsive" [fill]="gradientDonutChart.fill">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Patterned Donut Chart</h4>
+                    <!-- Patterned Donut Chart -->
+                    <apx-chart [series]="patternedDonutChart.series" [chart]="patternedDonutChart.chart"
+                        [stroke]="patternedDonutChart.stroke" [dataLabels]="patternedDonutChart.dataLabels"
+                        [labels]="patternedDonutChart.labels" [states]="patternedDonutChart.states"
+                        [legend]="patternedDonutChart.legend" [colors]="patternedDonutChart.colors"
+                        [responsive]="patternedDonutChart.responsive" [fill]="patternedDonutChart.fill">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Basic RadialBar Chart</h4>
+                    <!-- Basic RadialBar Chart -->
+                    <apx-chart [series]="basicRadialBarChart.series" [chart]="basicRadialBarChart.chart"
+                        [plotOptions]="basicRadialBarChart.plotOptions" [labels]="basicRadialBarChart.labels"
+                        [legend]="basicRadialBarChart.legend" [colors]="basicRadialBarChart.colors">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Multiple RadialBars</h4>
+                    <!-- Multiple RadialBars -->
+                    <apx-chart [series]="multipleRadialBars.series" [chart]="multipleRadialBars.chart"
+                        [plotOptions]="multipleRadialBars.plotOptions" [labels]="multipleRadialBars.labels"
+                        [legend]="multipleRadialBars.legend" [colors]="multipleRadialBars.colors">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-3">Stroked Circular Guage</h4>
+                    <!-- Stroked Circular Guage -->
+                    <apx-chart [series]="strokedCircularGuage.series" [chart]="strokedCircularGuage.chart"
+                        [fill]="strokedCircularGuage.fill" [plotOptions]="strokedCircularGuage.plotOptions"
+                        [labels]="strokedCircularGuage.labels" [stroke]="strokedCircularGuage.stroke"
+                        [colors]="strokedCircularGuage.colors" [responsive]="strokedCircularGuage.responsive">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

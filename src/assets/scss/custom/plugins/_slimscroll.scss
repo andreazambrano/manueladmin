@@ -1,0 +1,22 @@
+//
+// slimscroll.scss
+//
+@import "~metismenujs/scss/metismenujs.scss";
+
+.slimScrollDiv {
+  height: auto !important;
+}
+
+.slimscroll-menu {
+  height: 100%;
+}
+
+.scrollbar-track {
+  background: transparent !important;
+}
+
+.scrollbar-thumb {
+  background: rgb(158, 165, 171) !important;
+  opacity: 0.4;
+  width: 4px !important
+}

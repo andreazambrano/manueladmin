@@ -1,0 +1,244 @@
+<div class="container-fluid">
+  <div class="row page-title align-items-center">
+    <div class="col-sm-4 col-xl-12">
+      <h4 class="mb-1 mt-0">Actividad en MasterDent24</h4>
+    </div>
+    <!-- <div class="col-sm-8 col-xl-6">
+      <form class="form-inline float-sm-right mt-3 mt-sm-0">
+        <div class="form-group mb-sm-0 mr-2">
+          <input type="text" class="form-control" id="dashdaterange" style="min-width: 208px;"
+            placeholder="2018-10-03 to 2018-10-10" mwlFlatpickr [convertModelValue]="true" mode="range" />
+        </div>
+        <div class="btn-group" ngbDropdown>
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ngbDropdownToggle>
+            <i class='uil uil-file-alt mr-1'></i>Download
+            <i class="icon"><span>
+                <i data-feather="chevron-down"></i>
+              </span></i></button>
+          <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+            <a href="javascript: void(0);" class="dropdown-item notify-item">
+              <i data-feather="mail" class="icon-dual icon-xs mr-2"></i>
+              <span> Email</span>
+            </a>
+            <a href="javascript: void(0);" class="dropdown-item notify-item">
+              <i data-feather="printer" class="icon-dual icon-xs mr-2"></i>
+              <span> Print</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="javascript: void(0);" class="dropdown-item notify-item">
+              <i data-feather="file" class="icon-dual icon-xs mr-2"></i>
+              <span> Re-Generate</span>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div> -->
+  </div>
+  <!-- Widget  -->
+<!--   <div class="row">
+    <div class="col-md-6 col-xl-3">
+      <app-statchart mainTitle="today revenue" value=2100 subValue="10.21%" chartColors="#5369f8"></app-statchart>
+    </div>
+    <div class="col-md-6 col-xl-3">
+      <app-statchart mainTitle="product sold" value=1065 subValue='5.05%' chartColors="#f77e53"></app-statchart>
+    </div>
+    <div class="col-md-6 col-xl-3">
+      <app-statchart mainTitle="New customers" value=11 subValue="25.16%" chartColors="#43d39e"></app-statchart>
+    </div>
+    <div class="col-md-6 col-xl-3">
+      <app-statchart mainTitle="new visitors" value=750 subValue="5.05%" chartColors="#ffbe0b"></app-statchart>
+    </div>
+  </div> -->
+  <!-- end widget -->
+  <div class="row">
+    <div class="col-xl-3">
+      <div class="card">
+        <div class="card-body p-0">
+          <h5 class="card-title header-title border-bottom p-3 mb-0" *ngIf="_uw.totalPatients!==undefined && _uw.totalDentists!==undefined">Resumen</h5>
+          <!-- Overview data -->
+          <app-overview value='0' icon='users' title="Total de visitantes" classNames="px-3 py-4">
+          </app-overview>
+          <app-overview value='{{_uw.totalPatients}}' icon='image' title="Pacientes registrados" classNames="px-3 py-4">
+          </app-overview>
+          <app-overview value='{{_uw.totalDentists}}' icon='shopping-bag' title="Solicitudes de cuenta" classNames="px-3 py-4" ></app-overview>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-9">
+      <div class="card">
+        <div class="card-body pb-0">
+          <!-- <ul class="nav card-nav float-right">
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="javascript: void(0);">Today</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="javascript: void(0);">7d</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="javascript: void(0);">15d</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="javascript: void(0);">1m</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="javascript: void(0);">1y</a>
+            </li>
+          </ul> -->
+          <h5 class="card-title header-title mb-0">Visitas</h5>
+
+          <div class="mt-3">
+            <apx-chart [series]="revenueAreaChart.series" [chart]="revenueAreaChart.chart"
+              [tooltip]="revenueAreaChart.tooltip" [colors]="revenueAreaChart.colors"
+              [dataLabels]="revenueAreaChart.dataLabels" [stroke]="revenueAreaChart.stroke" [grid]="revenueAreaChart.grid"
+              [fill]="revenueAreaChart.fill" [yaxis]="revenueAreaChart.yaxis" [xaxis]="revenueAreaChart.xaxis">
+            </apx-chart>
+    
+        </div>
+      </div>
+    </div>
+   <!--  <div class="col-xl-3">
+      <div class="card">
+        <div class="card-body pb-0">
+          <h5 class="card-title header-title">Targets</h5>
+       
+          <div class="mt-3">
+            <apx-chart [series]="targetsBarChart.series" [chart]="targetsBarChart.chart"
+              [colors]="targetsBarChart.colors" [plotOptions]="targetsBarChart.plotOptions"
+              [tooltip]="targetsBarChart.tooltip"
+              [yaxis]="targetsBarChart.yaxis" [legend]="targetsBarChart.legend" [xaxis]="targetsBarChart.xaxis"
+              [dataLabels]="targetsBarChart.dataLabels" [labels]="targetsBarChart.labels">
+            </apx-chart>
+          </div>
+ 
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+ <!--  <div class="row">
+    <div class="col-xl-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title header-title mt-0 pb-2">Sales By Category</h5>
+         
+          <apx-chart [series]="salesDonutChart.series" [chart]="salesDonutChart.chart"
+            [plotOptions]="salesDonutChart.plotOptions" [responsive]="salesDonutChart.responsive"
+            [legend]="salesDonutChart.legend" [labels]="salesDonutChart.labels" [tooltip]="salesDonutChart.tooltip"
+            [colors]="salesDonutChart.colors">
+          </apx-chart>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-7">
+      <div class="card">
+        <div class="card-body">
+          <a href="javascript: void(0);" class="btn btn-primary btn-sm float-right">
+            <i class="uil uil-export ml-1"></i> Export
+          </a>
+          <h5 class="card-title header-title mt-0 mb-0">Recent Orders</h5>
+          <div class="table-responsive mt-4">
+            <table class="table table-hover table-nowrap mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let table of ordersData">
+                  <td>{{ table.id }}</td>
+                  <td>{{ table.product }}</td>
+                  <td>{{ table.name }}</td>
+                  <td>{{ table.price }}</td>
+                  <td><span class="badge py-1" [ngClass]="{
+                                        'badge-soft-warning': table.status === 'Pending',
+                                        'badge-soft-success': table.status === 'Delivered',  
+                                        'badge-soft-danger': table.status === 'Declined'  
+                                    }">{{ table.status }}</span></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!--   <div class="row">
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body pt-2 pb-2">
+          <h5 class="mb-4 header-title">Top Performers</h5>
+          <app-members image="assets/images/users/avatar-7.jpg" text="Senior Sales Guy" name="Shreyu N">
+          </app-members>
+          <app-members image="assets/images/users/avatar-9.jpg" text="Social Media Campaign" name="Greeva Y">
+          </app-members>
+          <app-members image="assets/images/users/avatar-4.jpg" text="Inventory Manager" name="Nik G">
+          </app-members>
+          <app-members image="assets/images/users/avatar-1.jpg" text="Sales Persons" name="Hardik G">
+          </app-members>
+          <app-members image="assets/images/users/avatar-5.jpg" text="Sales Persons" name="Stive K">
+          </app-members>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body pt-2 pb-3">
+          <a routerLink="/task-list" class="btn btn-primary btn-sm mt-2 float-right">
+            View All
+          </a>
+          <h5 class="mb-4 header-title">Tasks</h5>
+
+          <div class="slimscroll" style="max-height: 390px;" appSlimScroll>
+            <app-task title="Draft the new contract document for sales team" text="Due on 24 Aug, 2019" id=1>
+            </app-task>
+            <app-task title="iOS App home page" text="Due on 23 Aug, 2019" id=2>
+            </app-task>
+            <app-task title="Write a release note for Shreyu" text="Due on 22 Aug, 2019" id=3>
+            </app-task>
+            <app-task title="Invite Greeva to a project shreyu admin" text="Due on 21 Aug, 2019" id=4>
+            </app-task>
+            <app-task title="Enable analytics tracking for main website" text="Due on 20 Aug, 2019" id=5>
+            </app-task>
+            <app-task title="Invite user to a project" text="Due on 28 Aug, 2019" id=6>
+            </app-task>
+            <app-task title="Write a release note" text="Due on 14 Aug, 2019" id=7>
+            </app-task>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body pt-2">
+          <div class="dropdown mt-2 float-right" ngbDropdown>
+            <a href="javascript: void(0);" class="dropdown-toggle arrow-none text-muted" ngbDropdownToggle>
+              <i class="uil uil-ellipsis-v"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+             
+              <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-refresh mr-2"></i>Refresh</a>
+             
+              <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-user-plus mr-2"></i>Add Member</a>
+              <div class="dropdown-divider"></div>
+             
+              <a href="javascript:void(0);" class="dropdown-item text-danger"><i class="uil uil-exit mr-2"></i>Exit</a>
+            </div>
+          </div>
+          <h5 class="mb-4 header-title">Recent Conversation</h5>
+          <div class="chat-conversation">
+            <app-chat maxHeight="328"></app-chat>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

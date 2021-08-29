@@ -1,0 +1,53 @@
+<!-- Start Content-->
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="text-center mt-4 mb-5">
+                <h3>Simple pricing for Everyone</h3>
+                <p class="text-muted">
+                    Fully functional accounts are starting from $19/month only
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let price of pricingData">
+                    <div class="card card-pricing">
+                        <div class="card-body p-4">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-2 font-weight-normal font-size-16">{{ price.pack }}</h5>
+                                    <h2 class="mt-0 mb-2">{{ price.price }} <span class="font-size-14">/ Month</span>
+                                    </h2>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="icon-dual icon-lg" [attr.data-feather]="price.icon" appFeatherIcon></i>
+                                </div>
+                            </div>
+
+                            <ul class="card-pricing-features text-muted border-top pt-2 mt-2 pl-0 list-unstyled">
+                                <li><i class='uil uil-check text-success font-size-15 mr-1'></i>{{ price.storage }} GB
+                                    Storage</li>
+                                <li><i class='uil uil-check text-success font-size-15 mr-1'></i>{{ price.bandwidth }} GB
+                                    Bandwidth</li>
+                                <li><i class='uil uil-check text-success font-size-15 mr-1'></i>{{ price.domain }}
+                                    Domain</li>
+                                <li><i class='uil uil-check text-success font-size-15 mr-1'></i>Email Support</li>
+                                <li><i class='uil uil-check text-success font-size-15 mr-1'></i>24x7 Support</li>
+                            </ul>
+
+                            <div class="mt-5 text-center">
+                                <button class="btn px-sm-4"
+                                    [ngClass]="{ 'btn-primary': price.pack === 'Business Pack', 'btn-soft-primary': price.pack !== 'Business Pack'}"><i
+                                        class='uil uil-arrow-right mr-1'></i>Buy
+                                    Now for $19</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+</div> <!-- container-fluid -->

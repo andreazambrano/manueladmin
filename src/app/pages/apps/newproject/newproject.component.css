@@ -1,0 +1,15 @@
+button,html input[type=button],input[type=reset],input[type=submit] {
+ width: 100px;
+    background: #27AE60;
+    font-weight: 700;
+    color: #fff;
+    border: 0;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+
+.errorLabel{
+	color: red;
+}

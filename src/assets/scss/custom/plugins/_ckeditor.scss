@@ -1,0 +1,11 @@
+//
+// _ckeditor.scss
+//
+.ck.ck-reset_all,
+.ck.ck-reset_all * {
+  color: $body-color !important;
+}
+
+.ck-editor__editable {
+  background: transparent !important;
+}

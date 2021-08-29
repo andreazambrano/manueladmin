@@ -1,0 +1,1271 @@
+<div class="container-fluid">
+  <app-page-title title="Bootstrap UI" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <!-- alerts -->
+  <div class="row">
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <h5 class="header-title mb-1 mt-0">Alerts</h5>
+            <p class="sub-header">
+              Provide contextual feedback messages for typical user actions with the handful of available
+              and flexible alert messages.
+            </p>
+            <ngb-alert type="primary" [dismissible]="false">
+              A simple primary alert—check it out!
+            </ngb-alert>
+            <ngb-alert type="secondary" [dismissible]="false">
+              A simple secondary alert—check it out!
+            </ngb-alert>
+            <ngb-alert type="success" *ngIf="!alertClosed" (close)="alertClosed = true">
+              A simple success alert—check it out!
+            </ngb-alert>
+            <ngb-alert type="danger" *ngIf="!alertClose" (close)="alertClose = true">
+              A simple danger alert—check it out!
+            </ngb-alert>
+            <ngb-alert type="warning" *ngIf="!closed" (close)="closed = true">
+              A simple warning alert—check it out!
+            </ngb-alert>
+            <ngb-alert type="info" [dismissible]="false" class="mb-0">
+              A simple info alert—check it out!
+            </ngb-alert>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <h5 class="header-title mb-1 mt-0">Toasts</h5>
+            <p class="sub-header">
+              Push notifications to your visitors with a toast, a lightweight and easily customizable
+              alert message
+            </p>
+
+            <div class="pt-4 px-3">
+              <ngb-toast [autohide]="false">
+                <ng-template ngbToastHeader>
+                  <img src="assets/images/logo.svg" alt="brand-logo" height="18" class="mr-1">
+                  <strong class="mr-auto">Shreyu</strong>
+                  <small>11 mins ago</small>
+                </ng-template>
+                Hello, world! This is a toast message.
+              </ngb-toast>
+              <ngb-toast [autohide]="false">
+                <ng-template ngbToastHeader>
+                  <img src="assets/images/logo.svg" alt="brand-logo" height="18" class="mr-1">
+                  <strong class="mr-auto">Shreyu</strong>
+                  <small>12 mins ago</small>
+                </ng-template>
+                Hello, world! This is a toast message.
+              </ngb-toast>
+              <ngb-toast [autohide]="false">
+                <ng-template ngbToastHeader>
+                  <img src="assets/images/logo.svg" alt="brand-logo" height="18" class="mr-1">
+                  <strong class="mr-auto">Shreyu</strong>
+                  <small>15 mins ago</small>
+                </ng-template>
+                Hello, world! This is a toast message.
+              </ngb-toast>
+              <ngb-toast [autohide]="false">
+                <ng-template ngbToastHeader>
+                  <img src="assets/images/logo.svg" alt="brand-logo" height="18" class="mr-1">
+                  <strong class="mr-auto">Shreyu</strong>
+                  <small>21 mins ago</small>
+                </ng-template>
+                Hello, world! This is a toast message.
+              </ngb-toast>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- buttons -->
+  <div class="row">
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <h5 class="header-title mb-1 mt-0">Buttons</h5>
+            <p class="sub-header">Use the button classes on an
+              <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or
+              <code>&lt;input&gt;</code> element.</p>
+
+            <div class="button-list">
+              <ng-container *ngFor="let color of colors">
+                <button type="button" class="btn btn-{{ color.color }}">{{ color.color | titlecase }}</button>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-1">
+            <h5 class="font-size-16 mb-1">Outline buttons </h5>
+            <p class="sub-header">Use a classes <code>.btn-outline-**</code> to
+              quickly create a bordered buttons.</p>
+
+            <div class="button-list">
+              <ng-container *ngFor="let color of colors">
+                <button type="button" class="btn btn-outline-{{ color.color }}">{{ color.color | titlecase }}</button>
+              </ng-container>
+            </div>
+          </div>
+          <div class="mt-4 pt-1">
+            <h5 class="font-size-16 mb-1">Soft buttons </h5>
+            <p class="sub-header">Use a classes <code>.btn-soft-**</code> to
+              quickly create buttons with soft background.</p>
+
+            <div class="button-list">
+              <ng-container *ngFor="let color of colors">
+                <button type="button" class="btn btn-soft-{{ color.color }}">{{ color.color | titlecase }}</button>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-1">
+            <h5 class="font-size-16 mb-1">Button-Rounded </h5>
+            <p class="sub-header">Add <code>.btn-rounded</code> to default
+              button to get rounded corners.</p>
+
+            <div class="button-list">
+              <ng-container *ngFor="let color of colors">
+                <button type="button"
+                  class="btn btn-{{ color.color }} btn-rounded">{{ color.color | titlecase }}</button>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="mt-4 mt-xl-0">
+            <h5 class="font-size-16 mb-1 mt-0">Button Width</h5>
+            <p class="sub-header">
+              Create buttons with minimum width by adding add
+              <code>.width-xs</code>, <code>.width-sm</code>,
+              <code>.width-md</code> or <code>.width-lg</code>.
+            </p>
+
+            <div class="button-list">
+              <button type="button" class="btn btn-primary width-xs">Xs</button>
+              <button type="button" class="btn btn-success width-sm">Small</button>
+              <button type="button" class="btn btn-info width-md">Middle</button>
+              <button type="button" class="btn btn-warning width-lg">Large</button>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-1">
+            <h5 class="font-size-16 mb-1">Button Sizes</h5>
+            <p class="sub-header">
+              Add <code>.btn-lg</code>, <code>.btn-sm</code> for additional
+              sizes.
+            </p>
+
+
+            <div class="button-list">
+              <button class="btn btn-primary btn-lg">Large button</button>
+              <button class="btn btn-danger">Normal button</button>
+              <button class="btn btn-success btn-sm">Small button</button>
+              <button type="button" class="btn btn-block btn--md btn-primary">Block Button</button>
+            </div>
+
+          </div>
+
+          <div class="mt-4 pt-1">
+            <h5 class="font-size-16 mb-1">Button Group</h5>
+            <p class="sub-header">
+              Wrap a series of buttons with <code>.btn</code> in
+              <code>.btn-group</code>.
+            </p>
+
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="btn-group mb-2">
+                  <div class="btn-group btn-group-toggle">
+                    <label class="btn btn-info" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left
+                    </label>
+                    <label class="btn btn-info" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
+                    </label>
+                    <label class="btn btn-info" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
+                    </label>
+                  </div>
+                </div>
+                <br>
+                <div class="btn-group mb-2">
+                  <div class="btn-group btn-group-toggle">
+                    <label class="btn btn-primary" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="btnmodel.first"> 1</label>
+                    <label class="btn btn-primary" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="btnmodel.second"> 2</label>
+                    <label class="btn btn-primary" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="btnmodel.third"> 3</label>
+                    <label class="btn btn-primary" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="btnmodel.forth"> 4</label>
+                  </div>
+                </div>
+                <br>
+                <div class="btn-group mb-1">
+                  <div class="btn-group btn-group-toggle">
+                    <label class="btn btn-info" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="btngroup.first">1</label>
+                    <label class="btn btn-info" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="btngroup.second">2</label>
+                    <label class="btn btn-info" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="btngroup.third">3</label>
+                    <div ngbDropdown class="btn-group">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        ngbDropdownToggle aria-expanded="false"> Dropdown
+                        <i class="uil uil-angle-down"></i></button>
+                      <div class="dropdown-menu" ngbDropdownMenu>
+                        <a class="dropdown-item" href="javascript: void(0)">Dropdown link</a>
+                        <a class="dropdown-item" href="javascript: void(0)">Dropdown link</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="btn-group-vertical mb-2">
+                      <button type="button" class="btn btn-primary">Top</button>
+                      <button type="button" class="btn btn-primary">Middle</button>
+                      <button type="button" class="btn btn-primary">Bottom</button>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="btn-group-vertical mb-2">
+                      <button type="button" class="btn btn-info">Button
+                        1</button>
+                      <button type="button" class="btn btn-info">Button
+                        2</button>
+                      <div ngbDropdown class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" ngbDropdownToggle> Button
+                          3 <i class="uil uil-angle-down"></i></button>
+                        <div class="dropdown-menu" ngbDropdownMenu>
+                          <a class="dropdown-item" href="javascript: void(0);">Dropdown
+                            link</a>
+                          <a class="dropdown-item" href="javascript: void(0);">Dropdown
+                            link</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="mb-3 mt-0 header-title">Badges</h4>
+
+          <div class="row">
+            <div class="col-xl-4">
+              <div>
+                <h5 class="font-size-15 mb-1">Default</h5>
+                <p class="sub-header">
+                  Badges scale to match the size of the immediate parent element by using relative
+                  font sizing and <code class="highlighter-rouge">em</code> units.
+                </p>
+                <ng-container *ngFor="let color of colors | slice:0:6">
+                  <span class="badge badge-{{ color.color }} ml-1">{{ color.color | titlecase }}</span>
+                </ng-container>
+              </div>
+            </div>
+            <div class="col-xl-4">
+              <div class="mt-4 mt-xl-0">
+                <h5 class="font-size-15 mb-1">Pill Badges</h5>
+                <p class="sub-header">
+                  Use the <code>.badge-pill</code> modifier class to make badges more rounded.
+                </p>
+                <ng-container *ngFor="let color of colors | slice:0:6">
+                  <span class="badge badge-{{ color.color }} badge-pill ml-1">{{ color.color | titlecase }}</span>
+                </ng-container>
+              </div>
+            </div>
+            <div class="col-xl-4">
+              <div class="mt-4 mt-xl-0">
+                <h5 class="font-size-15 mb-1">Badges Lighten</h5>
+                <p class="sub-header">
+                  Use the <code>.badge-soft-*</code> for a badge lighten.
+                </p>
+
+                <ng-container *ngFor="let color of colors | slice:0:6">
+                  <span class="badge badge-soft-{{ color.color }} ml-1">{{ color.color | titlecase }}</span>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="mb-3 mt-0 header-title">Cards</h4>
+          <div class="row bg-light p-3">
+            <div class="col-lg-6 col-xl-3">
+              <!-- Simple card -->
+              <div class="card mb-4 mb-xl-0">
+                <img class="card-img-top img-fluid" src="assets/images/small/img-1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title font-size-16">Card title</h5>
+                  <p class="card-text text-muted">Some quick example text to build on the card title
+                    and make
+                    up the bulk of the card's content. With supporting text below as a natural
+                    lead-in to additional content.</p>
+                  <a href="javascript:void(0);" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div><!-- end col -->
+
+            <div class="col-lg-6 col-xl-3">
+              <div class="card mb-4 mb-xl-0">
+                <img class="card-img-top img-fluid" src="assets/images/small/img-2.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title font-size-16">Card title</h5>
+                  <p class="card-text text-muted">Some quick example text to build on the card title.
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush  text-muted">
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                </ul>
+                <div class="card-body">
+                  <a href="javascript:void(0);" class="card-link text-custom">Card link</a>
+                  <a href="javascript:void(0);" class="card-link text-custom">Another link</a>
+                </div>
+              </div>
+            </div><!-- end col -->
+
+
+            <div class="col-xl-6">
+              <div class="card">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-md-5">
+                    <img src="assets/images/small/img-6.jpg" class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <h5 class="card-title font-size-16">Card title</h5>
+                      <p class="card-text text-muted">This is a wider card with supporting text
+                        lead-in to additional content.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins
+                          ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <h5 class="card-title font-size-16">Card title</h5>
+                      <p class="card-text text-muted">This is a wider card with supporting text
+                        lead-in to additional content.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins
+                          ago</small></p>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <img src="assets/images/small/img-4.jpg" class="card-img" alt="...">
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- end col -->
+          </div>
+          <!-- end row -->
+
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-1 mt-0">Dropdown Examples</h5>
+          <p class="sub-header">
+            The best part is you can do this with any button variant, too:
+          </p>
+
+          <div class="btn-group mt-2 mr-1" ngbDropdown>
+            <button type="button" class="btn btn-primary dropdown-toggle" ngbDropdownToggle>Primary <i class="icon">
+                <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i></button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript: void(0);">Separated link</a>
+            </div>
+          </div><!-- /btn-group -->
+          <div class="btn-group mt-2 mr-1" ngbDropdown>
+            <button type="button" class="btn btn-secondary dropdown-toggle" ngbDropdownToggle>Secondary <i class="icon">
+              <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i></button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript: void(0);">Separated link</a>
+            </div>
+          </div><!-- /btn-group -->
+          <div class="btn-group mt-2 mr-1" ngbDropdown>
+            <button type="button" class="btn btn-success dropdown-toggle" ngbDropdownToggle>Success <i class="icon">
+              <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i></button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript: void(0);">Separated link</a>
+            </div>
+          </div><!-- /btn-group -->
+          <div class="btn-group mt-2 mr-1" ngbDropdown>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" ngbDropdownToggle>
+              <i class="icon">
+                <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i></button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript: void(0);">Separated link</a>
+            </div>
+          </div><!-- /btn-group -->
+          <div class="btn-group mt-2 mr-1" ngbDropdown>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" ngbDropdownToggle>
+              <i class="icon">
+                <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i></button>
+
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript: void(0);">Separated link</a>
+            </div>
+          </div><!-- /btn-group -->
+          <div class="btn-group mt-2 mr-1" ngbDropdown>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" ngbDropdownToggle>
+              <i class="icon">
+                <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i></button>
+
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript: void(0);">Separated link</a>
+            </div>
+          </div><!-- /btn-group -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-1 mt-0">Dropdown - More Examples</h5>
+          <p class="sub-header">
+            You can put a form or simple text within a dropdown menu or set the different position
+          </p>
+
+          <div class="btn-group dropdown mt-2 mr-1" ngbDropdown>
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenutext" ngbDropdownToggle>
+              Simple text <i class="icon">
+                <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i>
+            </button>
+            <div class="dropdown-menu dropdown-lg p-3" aria-labelledby="dropdownMenutext" ngbDropdownMenu>
+              <div class="text-muted">
+                <p>
+                  Some example text that's free-flowing within the dropdown menu.
+                </p>
+                <p class="mb-0">
+                  And this is more example text.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="btn-group dropdown mt-2 mr-1" ngbDropdown>
+            <button class="btn btn-secondary dropdown-toggle" type="button" ngbDropdownToggle>
+              Dropdown menu Forms <i class="icon">
+                <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i>
+            </button>
+            <form class="dropdown-menu dropdown-lg p-3" ngbDropdownMenu>
+              <div class="form-group">
+                <label for="exampleDropdownFormEmail2">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+              </div>
+              <div class="form-group">
+                <label for="exampleDropdownFormPassword2">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+              </div>
+              <div class="form-group">
+
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="dropdownCheck">
+                  <label class="custom-control-label" for="dropdownCheck">Remember
+                    me</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+          </div>
+
+          <div class="btn-group mt-2 mr-1" ngbDropdown>
+            <button type="button" class="btn btn-success dropdown-toggle" ngbDropdownToggle>
+              Right Align <i class="icon">
+                <i [attr.data-feather]="'chevron-down'" appFeatherIcon></i>
+              </i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+            </div>
+          </div>
+
+          <div class="btn-group mt-2 mr-1 dropright" ngbDropdown placement="right">
+            <button type="button" class="btn btn-info dropdown-toggle" ngbDropdownToggle>
+              Drop Right <i class="icon">
+                <i [attr.data-feather]="'chevron-right'" appFeatherIcon></i>
+              </i>
+            </button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript: void(0);">Separated link</a>
+            </div>
+          </div>
+
+          <div class="btn-group mt-2 dropleft mr-1" ngbDropdown placement="left">
+            <button type="button" class="btn btn-danger dropdown-toggle" ngbDropdownToggle>
+              <i class="icon">
+                <i [attr.data-feather]="'chevron-left'" appFeatherIcon></i>
+              </i> Drop Left
+            </button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript: void(0);">Action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Another action</a>
+              <a class="dropdown-item" href="javascript: void(0);">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript: void(0);">Separated link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-3 mt-0">Nav Tabs</h5>
+          <ngb-tabset>
+            <ngb-tab title="Home">
+              <ng-template ngbTabContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Profile">
+              <ng-template ngbTabContent>
+                <ng-template [ngTemplateOutlet]="TabContent1"></ng-template>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Messages">
+              <ng-template ngbTabContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-4 mt-0">Nav Pills</h5>
+          <ngb-tabset justify="justified" type="pills" class="navtab-bg">
+            <ngb-tab title="Home" class="nav-item">
+              <ng-template ngbTabContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Profile" class="nav-item">
+              <ng-template ngbTabContent>
+                <ng-template [ngTemplateOutlet]="TabContent1"></ng-template>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Messages" class="nav-item">
+              <ng-template ngbTabContent>
+                <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+              </ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordions -->
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-3 mt-0">Accordions Example</h5>
+
+          <div class="accordion" id="accordionExample">
+            <ngb-accordion #acc="ngbAccordion" activeIds="static-1" [closeOthers]="true"
+              class="custom-accordionwitharrow">
+              <ngb-panel id="static-1">
+                
+                <ng-template ngbPanelHeader let-opened="opened">
+                  <button class="text-dark btn btn-link text-decoration-none p-0 w-100 text-left" ngbPanelToggle>
+                    <div class="card-header" id="headingOne">
+                      <h5 class="m-0 font-size-16">
+                        What is Lorem Ipsum? <i class="float-right accordion-arrow uil" [ngClass]="{'uil-angle-down': !opened, 'uil-angle-up': opened}"></i>
+                      </h5>
+                    </div>
+                  </button>
+                </ng-template>
+
+                <ng-template ngbPanelContent>
+                  <ng-template [ngTemplateOutlet]="accordionContent"></ng-template>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="static-2">
+                
+                <ng-template ngbPanelHeader let-opened1="opened">
+                  <button class="text-dark btn btn-link text-decoration-none p-0 w-100 text-left" ngbPanelToggle>
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="m-0 font-size-16">
+                          Why do we use it? <i class="float-right accordion-arrow uil" [ngClass]="{'uil-angle-down': !opened1, 'uil-angle-up': opened1}"></i>
+                      </h5>
+                    </div>
+                  </button>
+                </ng-template>
+                
+                <ng-template ngbPanelContent>
+                  <ng-template [ngTemplateOutlet]="accordionContent"></ng-template>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="static-3">
+                <ng-template ngbPanelHeader let-opened2="opened">
+                  <button class="text-dark btn btn-link text-decoration-none p-0 w-100 text-left" ngbPanelToggle>
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="m-0 font-size-16">
+                        Where does it come from? <i class="float-right accordion-arrow uil" [ngClass]="{'uil-angle-down': !opened2, 'uil-angle-up': opened2}"></i>
+                      </h5>
+                    </div>
+                  </button>
+                </ng-template>
+
+                <ng-template ngbPanelContent>
+                  <ng-template [ngTemplateOutlet]="accordionContent"></ng-template>
+                </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-3 mt-0">Custom Accordion</h5>
+          <div class="accordion ml-4">
+            <ngb-accordion #acc="ngbAccordion" activeIds="static-1" [closeOthers]="true" class="custom-accordion">
+              <ngb-panel id="static-1">
+                <ng-template ngbPanelHeader let-opened4="opened">
+                  <button class="text-dark btn btn-link text-decoration-none p-0 w-100 text-left" ngbPanelToggle>
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="m-0 font-size-14">
+                        <i class="uil uil-question-circle h3 text-primary icon"></i>
+                        What is Anim text here?
+                      </h5>
+                    </div>
+                  </button>
+                </ng-template>
+
+                <ng-template ngbPanelContent>
+                  <ng-template [ngTemplateOutlet]="accordionContent"></ng-template>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="static-2">
+                <ng-template ngbPanelHeader let-opened5="opened">
+                  <button class="text-dark btn btn-link text-decoration-none p-0 w-100 text-left" ngbPanelToggle>
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="m-0 font-size-14">
+                        <i class="uil uil-question-circle h3 text-primary icon"></i>
+                        Why use Anim text here?
+                      </h5>
+                    </div>
+                  </button>
+                </ng-template>
+
+                <ng-template ngbPanelContent>
+                  <ng-template [ngTemplateOutlet]="accordionContent"></ng-template>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="static-3">
+                <ng-template ngbPanelHeader let-opened6="opened">
+                  <button class="text-dark btn btn-link text-decoration-none p-0 w-100 text-left" ngbPanelToggle>
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="m-0 font-size-14">
+                        <i class="uil uil-question-circle h3 text-primary icon"></i>
+                        How many variations exist?
+                      </h5>
+                    </div>
+                  </button>
+                </ng-template>
+                
+                <ng-template ngbPanelContent>
+                  <ng-template [ngTemplateOutlet]="accordionContent"></ng-template>
+                </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+  <!-- Modal -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="mt-0 mb-1 header-title">Modals</h4>
+
+          <p class="sub-header">
+            A rendered modal with header, body, and set of actions in the footer.
+          </p>
+          <div class="row">
+            <div class="col-xl-4">
+              <h5 class="font-size-16 mb-3">Examples</h5>
+              <div class="button-list">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" (click)="openModal(content)">Standard
+                  Modal</button>
+              </div>
+            </div>
+            <div class="col-xl-4">
+              <div class="mt-4 mt-xl-0">
+                <h5 class="font-size-16 mb-3">Modal sizes</h5>
+                <div class="button-list">
+                  <!-- Extra large modal -->
+                  <button type="button" class="btn btn-secondary" (click)="extraLargeModal(extraLargeDataModal)">Extra
+                    large modal</button>
+                  <!-- Large modal -->
+                  <button type="button" class="btn btn-success" (click)="largeModal(largeDataModal)">Large
+                    modal</button>
+                  <!-- Small modal -->
+                  <button type="button" class="btn btn-info" (click)="smallModal(smallDataModal)">Small modal</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4">
+              <div class="mt-4 mt-xl-0">
+                <h5 class="font-size-16 mb-3">Other exmaples</h5>
+                <div class="button-list">
+                  <!-- Center modal -->
+                  <button type="button" class="btn btn-warning" (click)="centerModal(centerDataModal)">Center
+                    modal</button>
+                  <!-- Scrollable -->
+                  <button type="button" class="btn btn-dark" (click)="scrollModal(scrollDataModal)">Scrollable</button>
+                  <!-- Scrollable -->
+                  <button type="button" class="btn btn-danger" (click)="erroModal(errorModalData)">Error</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+  <!-- progress -->
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-1 mt-0">Progressbars</h5>
+          <p class="sub-header">Simple examples of progressbar</p>
+          <div>
+            <p>
+              <ngb-progressbar class="bg-primary"></ngb-progressbar>
+            </p>
+            <p>
+              <ngb-progressbar class="bg-primary" [value]="33"></ngb-progressbar>
+            </p>
+            <p>
+              <ngb-progressbar class="bg-primary" [value]="66"></ngb-progressbar>
+            </p>
+            <p>
+              <ngb-progressbar class="bg-primary" [value]="100"></ngb-progressbar>
+            </p>
+            <p>
+              <ngb-progressbar class="bg-primary" [value]="25">25%</ngb-progressbar>
+            </p>
+          </div>
+
+          <div class="mt-5">
+            <h5 class="font-size-16 mb-1 mt-0">Striped Progressbars</h5>
+            <p class="sub-header">
+              Uses a gradient to create a striped effect.
+            </p>
+            <div>
+              <p>
+                <ngb-progressbar class="primary" [value]="10" [striped]="true" [animated]="true">
+                </ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="success" [value]="25" [striped]="true" [animated]="true">
+                </ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="info" [value]="50" [striped]="true" [animated]="true">
+                </ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="warning" [value]="75" [striped]="true" [animated]="true">
+                </ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="danger" [value]="100" [striped]="true" [animated]="true">
+                </ngb-progressbar>
+              </p>
+              <p class="mb-0">
+                <ngb-progressbar type="primary" [value]="75" [striped]="true" [animated]="true">
+                </ngb-progressbar>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="mt-4 mt-xl-0">
+            <h5 class="font-size-16 mb-1 mt-0">Contextual Progressbars</h5>
+            <p class="sub-header">
+              Progress bars use some of the same button and alert classes for
+              consistent styles.
+            </p>
+            <div>
+              <p>
+                <ngb-progressbar type="secondary" [value]="0"></ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="success" [value]="25"></ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="info" [value]="50"></ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="warning" [value]="75"></ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="danger" [value]="100"></ngb-progressbar>
+              </p>
+            </div>
+          </div>
+          <div class="mt-5">
+            <h5 class="font-size-16 mb-1 mt-0">Progressbars Size</h5>
+            <p class="sub-header">
+              We can set a <code>height</code> value on the
+              <code>.progress</code>. The inner <code>.progress-bar</code> will automatically resize
+              accordingly.
+            </p>
+            <div>
+              <p>
+                <ngb-progressbar class="color" [value]="70" height="1px"></ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar class="color" [value]="30" height="5px"></ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="success" [value]="25" height="8px"></ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="info" [value]="50" height="12px"></ngb-progressbar>
+              </p>
+              <p>
+                <ngb-progressbar type="warning" [value]="75" height="15px"></ngb-progressbar>
+              </p>
+              <p class="mb-0">
+                <ngb-progressbar type="danger" [value]="25" height="25px"></ngb-progressbar>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+  <!-- tooltip -->
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-1 mt-0">Popovers</h5>
+          <p class="sub-header">Add small overlays of content, like those on
+            the iPad, to any element for housing secondary information.</p>
+
+          <div class="button-list">
+            <button type="button" class="btn btn-light" placement="top"
+              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on top
+            </button>
+            <button type="button" class="btn btn-light ml-1" placement="bottom"
+              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on bottom
+            </button>
+            <button type="button" class="btn btn-light ml-1" placement="left"
+              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on left
+            </button>
+            <button type="button" class="btn btn-light ml-1" placement="right"
+              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on right
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="header-title mb-1 mt-0">Tooltips</h5>
+          <p class="sub-header">Four options are available: top, right,
+            bottom,
+            and left aligned.</p>
+
+          <div class="button-list">
+            <button type="button" class="btn btn-primary" placement="top" ngbTooltip="Tooltip on top">
+              Tooltip on top
+            </button>
+            <button type="button" class="btn btn-primary" placement="bottom" ngbTooltip="Tooltip on bottom">
+              Tooltip on bottom
+            </button>
+            <button type="button" class="btn btn-primary" placement="left" ngbTooltip="Tooltip on left">
+              Tooltip on left
+            </button>
+            <button type="button" class="btn btn-primary" placement="right" ngbTooltip="Tooltip on right">
+              Tooltip on right</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="mb-3 mt-0 header-title">Spinners</h4>
+
+          <div class="row">
+            <div class="col-xl-6">
+              <div>
+                <h5 class="font-size-15 mb-1">Border spinner</h5>
+                <p class="sub-header">Use the border spinners for a lightweight loading indicator.</p>
+
+                <div>
+                  <div class="spinner-border text-primary m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-secondary m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-success m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-danger m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-warning m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-info m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-6">
+              <div class="mt-4 mt-lg-0">
+                <h5 class="font-size-15 mb-1">Growing spinner</h5>
+                <p class="sub-header">
+                  If you don’t fancy a border spinner, switch to the grow spinner. While it doesn’t
+                  technically spin, it does repeatedly grow!
+                </p>
+
+                <div>
+                  <div class="spinner-grow text-primary m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-secondary m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-success m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-danger m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-warning m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-info m-2" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+</div>
+<!-- Tab Content -->
+<ng-template #TabContent>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+    Cum
+    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+    ultricies
+    nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+  <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
+    ut,
+    imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
+    dapibus.
+    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+    consequat
+    vitae, eleifend ac, enim.</p>
+</ng-template>
+
+<!-- Tab Content -->
+<ng-template #TabContent1>
+  <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+    a,
+    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus.
+    Vivamus
+    elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat
+    vitae,
+    eleifend ac, enim.</p>
+  <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+    Aenean
+    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
+    felis,
+    ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+</ng-template>
+
+
+<ng-template #accordionContent>
+  <div class="text-muted">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+    officia
+    aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+    tempor,
+    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+    helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+    lomo.
+    Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
+    them
+    accusamus labore sustainable VHS.
+  </div>
+</ng-template>
+
+<!-- Standard Modal -->
+<ng-template #content role="document" let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal Heading</h4>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+    <h6>Text in a modal</h6>
+    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+    <hr>
+    <h6>Overflowing text to show scroll behavior</h6>
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+      quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+      laoreet
+      rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+      consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.dismiss('Cross click')">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+</ng-template>
+
+<!-- Extra large modal -->
+<ng-template #extraLargeDataModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Extra Large modal</h5>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+    ...
+  </div>
+</ng-template>
+
+<!-- Large Modal -->
+<ng-template #largeDataModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Large modal</h5>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+    ...
+  </div>
+</ng-template>
+
+<!-- Small Modal -->
+<ng-template #smallDataModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Small modal</h5>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+    ...
+  </div>
+</ng-template>
+
+<!-- Center Modal -->
+<ng-template #centerDataModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Center modal</h5>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+    <h5>Overflowing text to show scroll behavior</h5>
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+      quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p class="mb-0">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+      vel
+      augue laoreet rutrum faucibus dolor auctor.</p>
+  </div>
+</ng-template>
+
+<!-- Scrollable Modal -->
+<ng-template #scrollDataModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Modal title</h5>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+      eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+      laoreet rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+      consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+      eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+      laoreet rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+      consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+      eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+      laoreet rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+      consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+      eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+      laoreet rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+      consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+      eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+      laoreet rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+      consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+      eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+      laoreet rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+      consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click')">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+</ng-template>
+
+<!-- Error Modal -->
+<ng-template #errorModalData let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Error modal</h5>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body text-center">
+    <i class="uil-no-entry text-warning display-3"></i>
+    <h4 class="text-danger mt-4">Page not Found</h4>
+    <p class="w-75 mx-auto text-muted">Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+    <div class="mt-4">
+      <a href="javascript: void(0);" class="btn btn-outline-primary btn-rounded width-md"
+        (click)="modal.dismiss('Cross click')"><i class="uil uil-arrow-left mr-1"></i> Back</a>
+    </div>
+  </div>
+</ng-template>

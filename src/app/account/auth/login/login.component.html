@@ -1,0 +1,122 @@
+<div class="account-pages my-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-10">
+        <div class="card">
+          <div class="card-body p-0">
+
+
+            <div class="row">
+              <div class="col-md-6 p-5">
+                
+                <app-ui-preloader [display]="loading"></app-ui-preloader>
+
+                <div class="mx-auto mb-5">
+                  <a routerLink="/">
+                    <img src="assets/images/logo.png" alt="" height="24" />
+                    <h3 class="d-inline align-middle ml-1 text-logo">MasterDent24+</h3>
+                  </a>
+                </div>
+
+                <h6 class="h5 mb-0 mt-4">Bienvenido!</h6>
+                <p class="text-muted mt-1 mb-4">Indique su email y contraseña para ingresal al panel de control.</p>
+
+                <form class="authentication-form" name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()"
+                  novalidate>
+
+                  <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
+
+                  <div class="form-group">
+                    <label class="form-control-label">Email</label>
+                    <div class="input-group input-group-merge">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="icon-dual" data-feather="mail" appFeatherIcon></i>
+                        </span>
+                      </div>
+                      <input type="email" class="form-control" formControlName="email" id="email"
+                        placeholder="Your email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">El email es requerido</div>
+                        <div *ngIf="f.email.errors.email">Por favor proporcione un email valido</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group mt-4">
+                    <label class="form-control-label">Contraseña</label>
+                 <!--    <a routerLink="/account/reset-password"
+                      class="float-right text-muted text-unline-dashed ml-1">Forgot your
+                      password?</a> -->
+                    <div class="input-group input-group-merge">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i data-feather="lock" class="icon-dual" appFeatherIcon></i>
+                        </span>
+                      </div>
+                      <input type="password" class="form-control" formControlName="password"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="password"
+                        placeholder="Enter your password" required />
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">La contraseña es requerida</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group mb-4">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
+                      <label class="custom-control-label" for="checkbox-signin">Recordar
+                        me</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group mb-0 text-center">
+                    <button class="btn btn-primary btn-block" type="submit"> Entrar
+                    </button>
+                  </div>
+                </form>
+                <div class="py-3 text-center"><span class="font-size-16 font-weight-bold">Datos de logueo: </span></div>
+                <div class="row">
+                  <div class="col-12">
+                    <p class="pb-0"><strong>Email: </strong> 
+                    </p>
+                    <p>admin@masterdental24.com</p>
+                    <p class="pb-0"> <strong>Contraseña: </strong>
+                    </p>
+                    <p>
+                      masterdental24
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 d-none d-md-inline-block">
+                <div class="auth-page-sidebar">
+                  <div class="overlay"></div>
+                  <div class="auth-user-testimonial">
+                <!--     <p class="font-size-24 font-weight-bold text-white mb-1">I simply love it!</p>
+                    <p class="lead">"It's a elegent templete. I love it very much!"</p>
+                    <p>- Admin User</p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- end card-body -->
+        </div>
+        <!-- end card -->
+
+        <div class="row mt-3">
+          <div class="col-12 text-center">
+           <!--  <p class="text-muted">Don't have an account? <a routerLink="/account/signup"
+                class="text-primary font-weight-bold ml-1">Sign Up</a></p> -->
+          </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+      </div> <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>

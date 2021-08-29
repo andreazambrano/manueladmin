@@ -1,0 +1,260 @@
+<div class="container-fluid">
+    <app-page-title title="Form Wizard" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-4">Default wizard</h4>
+                    <aw-wizard>
+                        <aw-wizard-step class="sw-main sw-theme-default">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group row mb-3">
+                                        <label class="col-md-3 col-form-label">User name</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="userName" value="Coderthemes">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-md-3 col-form-label"> Password</label>
+                                        <div class="col-md-9">
+                                            <input type="password" name="password" class="form-control"
+                                                value="123456789">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-md-3 col-form-label">Re Password</label>
+                                        <div class="col-md-9">
+                                            <input type="password" name="confirm" class="form-control"
+                                                value="123456789">
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                            <ul class="list-inline wizard mb-0">
+                                <li class="previous list-inline-item"><button class="btn btn-primary"
+                                        awPreviousStep>Previous</button>
+                                </li>
+                                <li class="next list-inline-item float-right"><button class="btn btn-primary"
+                                        awNextStep>Next</button>
+                                </li>
+                            </ul>
+                        </aw-wizard-step>
+
+                        <aw-wizard-step>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group row mb-3">
+                                        <label class="col-md-3 col-form-label"> First name</label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="name" class="form-control" value="Francis">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-md-3 col-form-label"> Last name</label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="surname" class="form-control" value="Brinkman">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-md-3 col-form-label">Email</label>
+                                        <div class="col-md-9">
+                                            <input type="email" name="email" class="form-control"
+                                                value="cory1979@hotmail.com">
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                            <ul class="list-inline wizard mb-0">
+                                <li class="previous list-inline-item"><button class="btn btn-primary"
+                                        awPreviousStep>Previous</button>
+                                </li>
+                                <li class="next list-inline-item float-right"><button class="btn btn-primary"
+                                        awNextStep>Next</button>
+                                </li>
+                            </ul>
+                        </aw-wizard-step>
+
+                        <aw-wizard-step>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h2 class="mt-0"><i class="mdi mdi-check-all"></i></h2>
+                                        <h3 class="mt-0">Thank you !</h3>
+
+                                        <p class="w-75 mb-2 mx-auto">Quisque nec turpis at urna dictum luctus.
+                                            Suspendisse convallis
+                                            dignissim eros at volutpat. In egestas mattis dui. Aliquam
+                                            mattis dictum aliquet.</p>
+
+                                        <div class="mb-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">I agree with the
+                                                    Terms and
+                                                    Conditions</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                            <ul class="list-inline wizard mb-0">
+                                <li class="previous list-inline-item"><button class="btn btn-primary"
+                                        awPreviousStep>Previous</button>
+                                </li>
+                                <li class="next list-inline-item float-right"><button class="btn btn-primary"
+                                        awNextStep>Next</button>
+                                </li>
+                            </ul>
+                        </aw-wizard-step>
+                    </aw-wizard>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title mt-0 mb-4"> Wizard With Form Validation</h4>
+                    <aw-wizard #wizardForm>
+                        <aw-wizard-step>
+                            <form (ngSubmit)="formSubmit()" [formGroup]="validationForm">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label">User name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" formControlName="userName"
+                                                    value="Coderthemes"
+                                                    [ngClass]="{'is-invalid': submit && form.password.errors}">
+                                                <div *ngIf="submit && form.userName.errors" class="invalid-feedback">
+                                                    <span *ngIf="form.userName.errors.required"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label"> Password</label>
+                                            <div class="col-md-9">
+                                                <input type="password" formControlName="password" class="form-control"
+                                                    value="123456789"
+                                                    [ngClass]="{'is-invalid': submit && form.password.errors}">
+                                                <div *ngIf="submit && form.password.errors" class="invalid-feedback">
+                                                    <span *ngIf="form.password.errors.required"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label">Re Password</label>
+                                            <div class="col-md-9">
+                                                <input type="password" formControlName="confirm" class="form-control"
+                                                    value="123456789"
+                                                    [ngClass]="{'is-invalid': submit && form.confirm.errors}">
+                                                <div *ngIf="submit && form.confirm.errors" class="invalid-feedback">
+                                                    <span *ngIf="form.confirm.errors.required"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end col -->
+                                </div> <!-- end row -->
+                                <ul class="list-inline wizard mb-0">
+                                    <li class="previous list-inline-item"><button class="btn btn-primary"
+                                            type="button" awPreviousStep>Previous</button></li>
+                                    <li class="next list-inline-item float-right"><button class="btn btn-primary"
+                                            type="submit">Next</button></li>
+                                </ul>
+                            </form>
+                        </aw-wizard-step>
+
+                        <aw-wizard-step>
+                            <form (ngSubmit)="profileFormSubmit()" [formGroup]="profileValidationForm">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label" for="name"> First name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="name" formControlName="name" class="form-control"
+                                                    value="Francis"
+                                                    [ngClass]="{'is-invalid': submitForm && profileForm.name.errors}">
+                                                <div *ngIf="submitForm && profileForm.name.errors"
+                                                    class="invalid-feedback">
+                                                    <span *ngIf="profileForm.name.errors.required"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label" for="surname"> Last name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="surname" formControlName="surname"
+                                                    class="form-control" value="Brinkman"
+                                                    [ngClass]="{'is-invalid': submitForm && profileForm.surname.errors}">
+                                                <div *ngIf="submitForm && profileForm.surname.errors"
+                                                    class="invalid-feedback">
+                                                    <span *ngIf="profileForm.surname.errors.required"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label" for="email">Email</label>
+                                            <div class="col-md-9">
+                                                <input type="email" id="email" formControlName="email"
+                                                    class="form-control" value="cory1979@hotmail.com"
+                                                    [ngClass]="{'is-invalid': submitForm && profileForm.email.errors}">
+                                                <div *ngIf="submitForm && profileForm.email.errors"
+                                                    class="invalid-feedback">
+                                                    <span *ngIf="profileForm.email.errors.required"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end col -->
+                                </div> <!-- end row -->
+                                <ul class="list-inline wizard mb-0">
+                                    <li class="previous list-inline-item"><button class="btn btn-primary"
+                                            type="button" awPreviousStep>Previous</button>
+                                    </li>
+                                    <li class="next list-inline-item float-right"><button class="btn btn-primary"
+                                            type="submit">Next</button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </aw-wizard-step>
+
+                        <aw-wizard-step>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h2 class="mt-0"><i class="mdi mdi-check-all"></i></h2>
+                                        <h3 class="mt-0">Thank you !</h3>
+
+                                        <p class="w-75 mb-2 mx-auto">Quisque nec turpis at urna dictum luctus.
+                                            Suspendisse convallis
+                                            dignissim eros at volutpat. In egestas mattis dui. Aliquam
+                                            mattis dictum aliquet.</p>
+                                        <div class="mb-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                <label class="custom-control-label" for="customCheck1">I agree with the
+                                                    Terms and
+                                                    Conditions</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                            <ul class="list-inline wizard mb-0">
+                                <li class="previous list-inline-item"><button class="btn btn-primary"
+                                        awPreviousStep>Previous</button>
+                                </li>
+                                <li class="next list-inline-item float-right"><button class="btn btn-primary"
+                                        awNextStep>Next</button>
+                                </li>
+                            </ul>
+                        </aw-wizard-step>
+                    </aw-wizard>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+//
+// dropzone.scss
+//
+
+@import '~dropzone/dist/min/dropzone.min.css';
+
+.dropzone {
+  border: 2px dashed rgba($dark, 0.2);
+  background: lighten($gray-200, 4%);
+  border-radius: 6px;
+  outline: none !important;
+}

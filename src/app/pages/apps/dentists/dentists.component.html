@@ -1,0 +1,136 @@
+<div class="container-fluid">
+<!--   <div class="row page-title align-items-center">
+    <div class="col-sm-4 col-xl-6">
+      <h4 class="mb-1 mt-0">Dashboard</h4>
+    </div>
+    <div class="col-sm-8 col-xl-6">
+      <form class="form-inline float-sm-right mt-3 mt-sm-0">
+        <div class="form-group mb-sm-0 mr-2">
+          <input type="text" class="form-control" id="dashdaterange" style="min-width: 208px;"
+            placeholder="2018-10-03 to 2018-10-10" mwlFlatpickr [convertModelValue]="true" mode="range" />
+        </div>
+        <div class="btn-group" ngbDropdown>
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ngbDropdownToggle>
+            <i class='uil uil-file-alt mr-1'></i>Download
+            <i class="icon"><span>
+                <i data-feather="chevron-down"></i>
+              </span></i></button>
+          <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+            <a href="javascript: void(0);" class="dropdown-item notify-item">
+              <i data-feather="mail" class="icon-dual icon-xs mr-2"></i>
+              <span> Email</span>
+            </a>
+            <a href="javascript: void(0);" class="dropdown-item notify-item">
+              <i data-feather="printer" class="icon-dual icon-xs mr-2"></i>
+              <span> Print</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="javascript: void(0);" class="dropdown-item notify-item">
+              <i data-feather="file" class="icon-dual icon-xs mr-2"></i>
+              <span> Re-Generate</span>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div> -->
+  <app-page-title title="" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+
+  <div class="row">
+  
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-body">
+      <!--     <a routerLink="../newproject" class="btn btn-primary btn-sm float-right">
+            <i class="uil uil-export ml-1"></i> New project
+          </a> -->
+          <h5 class="card-title header-title mt-0 mb-0" style="color:#41bc3f;" [hidden]="newusers<1">Solicitudes de registro ({{newusers}})</h5>
+          <h5 class="card-title header-title mt-0 mb-0" [hidden]="newusers>0">Solicitudes de registro ({{newusers}})</h5>
+          <div class="table-responsive mt-4" [hidden]="newusers==0">
+            <table class="table table-hover table-nowrap mb-0">
+              <thead>
+                <tr>
+            <!--       <th scope="col">#</th> -->
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Nombre de usuario</th>
+                <!--   <th scope="col">Customer</th>
+                  <th scope="col">Price</th> -->
+          
+                  <!-- <th scope="col">estado de solicitud</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users"  [hidden]="user.status!='new'"  routerLink="/dentistview/{{user.id}}" style="cursor: pointer;">
+                  <!-- <td>{{ table.id }}</td> -->
+                  <td>{{ user.name }} {{user.surname}}</td>
+                  <td>{{ user.username }}</td>
+                 <!--  <td>{{ table.name }}</td>
+                  <td>{{ table.price }}</td> -->
+            
+                  <!-- <td><span >{{user.status}}</span></td> -->
+                </tr>
+
+              </tbody>
+            </table>
+          </div><!-- end table -->
+        </div><!-- end card-body -->
+      </div><!-- end card -->
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-body">
+      <!--     <a routerLink="../newproject" class="btn btn-primary btn-sm float-right">
+            <i class="uil uil-export ml-1"></i> New project
+          </a> -->
+          <h5 class="card-title header-title mt-0 mb-0">Dentistas registrados ({{registeredusers}})</h5>
+          <div class="table-responsive mt-4" >
+            <table class="table table-hover table-nowrap mb-0">
+              <thead>
+                <tr>
+            <!--       <th scope="col">#</th> -->
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Nombre de usuario</th>
+                <!--   <th scope="col">Customer</th>
+                  <th scope="col">Price</th> -->
+                  <th scope="col">Especialidad</th>
+                  <!-- <th scope="col">estado de solicitud</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users" [hidden]="user.status=='new'" routerLink="/dentistview/{{user.id}}" style="cursor: pointer;">
+                  <!-- <td>{{ table.id }}</td> -->
+                  <td>
+                    <div class="chat-avatar" *ngIf="user.images[0]!=undefined ">
+                     <img src="{{user.images[0]}}" style="width:32px;"> 
+                    {{ user.name }} {{user.surname}}
+                    </div> 
+                  </td>
+                  <td>
+                    {{ user.username }}
+                  </td>
+                 <!--  <td>{{ table.name }}</td>
+                  <td>{{ table.price }}</td> -->
+                  <td >
+                    <span *ngFor="let spec of user.specs">
+                      <div  *ngFor="let sp of specs">
+                        <div [hidden]="sp.idspec!=spec">  
+                        {{sp.name}},   
+                        </div>  
+                      </div> 
+                    </span>
+                  </td>
+                  <!-- <td><span >{{user.status}}</span></td> -->
+                </tr>
+
+              </tbody>
+            </table>
+          </div><!-- end table -->
+        </div><!-- end card-body -->
+      </div><!-- end card -->
+    </div>
+  </div>
+
+</div>

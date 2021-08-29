@@ -1,0 +1,22 @@
+<div class="media mt-1 border-top pt-3">
+    <img src="{{ image }}" class="avatar rounded mr-3" alt="shreyu">
+    <div class="media-body">
+        <h6 class="mt-1 mb-0 font-size-15">{{ name }}</h6>
+        <h6 class="text-muted font-weight-normal mt-1 mb-3">{{ text }}</h6>
+    </div>
+    <div class="dropdown align-self-center float-right" ngbDropdown>
+        <a href="javascript: void(0);" class="dropdown-toggle arrow-none text-muted" ngbDropdownToggle>
+            <i class="uil uil-ellipsis-v"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-exit mr-2"></i>Remove
+                from Team</a>
+            <div class="dropdown-divider"></div>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+        </div>
+    </div>
+</div>
