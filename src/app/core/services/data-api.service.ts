@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
  import { DentistInterface } from '../models/dentist-interface';
  import { SpecInterface } from '../models/spec-interface';
  import { PatientInterface } from '../models/patient-interface';
+ import { SuscriberInterface } from '../models/suscriber-interface';
 // import { SaleInterface } from '../models/sale-interface';
 import { OrderInterface } from '../models/order-interface';
 // import { InfoInterface } from '../models/info-interface';
@@ -28,7 +29,8 @@ export class DataApiService {
 	  dentist: Observable<any>; 
 	 dentists: Observable<any>;
 	 patient: Observable<any>; 
-	 patients: Observable<any>;
+	 patients: Observable<any>; suscriber: Observable<any>; 
+	 suscribers: Observable<any>;
 	// sale: Observable<any>;
 	order: Observable<any>;
   constructor(
@@ -47,24 +49,24 @@ export class DataApiService {
 	// 	.pipe(map(data => data));
 //}
 	getAllTixs(){
-		const url_api = 'hhttps://db.masterdent24.org:3032/api/tixes?filter[where][status]=activated';
+		const url_api = 'hhttps://db.buckapi.com:3062/api/tixes?filter[where][status]=activated';
 		return this.http.get(url_api);
 	}
  		getTamanoDentist(){
-	 	const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=new';
+	 	const url_api = 'https://db.buckapi.com:3062/api/dentist?filter[where][status]=new';
 	 	return (this.dentists = this.http.get(url_api));
 	 }
- 		getTamanoPatient(){
-	 	const url_api = 'https://db.masterdent24.org:3032/api/patient?filter[where][status]=new';
-	 	return (this.patients = this.http.get(url_api));
+ 		getTamanoSuscriber(){
+	 	const url_api = 'https://db.buckapi.com:3062/api/suscriber?filter[where][status]=new';
+	 	return (this.suscribers = this.http.get(url_api));
 	 }
 	getAllQuotes(){
-		const url_api = 'https://db.masterdent24.org:3032/api/order?filter[where][orderType]=appointment';
+		const url_api = 'https://db.buckapi.com:3062/api/order?filter[where][orderType]=appointment';
 		return this.http.get(url_api);
 	}
 		saveTixFree(tix :TixInterface){
 	//	let token = this.authService.getToken();
-		const url_api='https://db.masterdent24.org:3032/api/tixes';
+		const url_api='https://db.buckapi.com:3062/api/tixes';
 		return this.http
 		.post<TixInterface>(url_api, tix)
 		.pipe(map(data => data));
@@ -74,19 +76,19 @@ export class DataApiService {
 	// 	return (this.tixs = this.http.get(url_api));
 	// }
  	getAllTixsReturn(){
-		const url_api = 'https://db.masterdent24.org:3032/api/tixes?filter[where][status]=activated';
+		const url_api = 'https://db.buckapi.com:3062/api/tixes?filter[where][status]=activated';
 		return (this.tixs = this.http.get(url_api));
 	}
 	getAllDentistsReturn(){
-		const url_api = 'https://db.masterdent24.org:3032/api/dentist';
+		const url_api = 'https://db.buckapi.com:3062/api/dentist';
 		return (this.users = this.http.get(url_api));
 	}	
-	getAllPatientsReturn(){
-		const url_api = 'https://db.masterdent24.org:3032/api/patient?filter[where][status]=new';
-		return (this.users = this.http.get(url_api));
+	getAllSuscribersReturn(){
+		const url_api = 'https://db.buckapi.com:3062/api/suscriber?filter[where][status]=new';
+		return (this.suscribers = this.http.get(url_api));
 	}
 	getAllSpecs(){
-		const url_api = 'https://db.masterdent24.org:3032/api/specialties';
+		const url_api = 'https://db.buckapi.com:3062/api/specialties';
 		return (this.specs = this.http.get(url_api));
 	}
 
@@ -126,14 +128,14 @@ export class DataApiService {
 	}
 	updateDentist(dentist :DentistInterface, id: string){
 		// let token = this.authService.getToken();
-		const url_api=`https://db.masterdent24.org:3032/api/dentist/${id}`;
+		const url_api=`https://db.buckapi.com:3062/api/dentist/${id}`;
 		return this.http
 		.put<DentistInterface>(url_api, dentist)
 		.pipe(map(data => data));
 	}
 	getProfileById(id:string){
 		let indice = id;
-		const url_api=`https://db.masterdent24.org:3032/api/dentist/${indice}`;
+		const url_api=`https://db.buckapi.com:3062/api/dentist/${indice}`;
 		this.dentist = this.http.get(url_api);
 		return (this.dentist);
 	}

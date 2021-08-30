@@ -28,9 +28,9 @@ export class DashboardComponent implements OnInit {
   targetsBarChart: ChartType;
   salesDonutChart: ChartType;
   ordersData: OrdersTable[];
-  public getTamanoPatient(){
+  public getTamanoSuscriber(){
     this.dataApiService
-    .getTamanoPatient()
+    .getTamanoSuscriber()
     .subscribe((res:any) => {
       if (res[0] === undefined){
         return
@@ -53,7 +53,7 @@ export class DashboardComponent implements OnInit {
       });
   }
   ngOnInit() {
-  this.getTamanoPatient();
+  this.getTamanoSuscriber();
   this.getTamanoDentist();
     /**
      * Fetches the data

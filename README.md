@@ -1,4 +1,4 @@
-# MasterDent24+Administrator
-Webapp administrador de plataforma MasterDent24. 
+#Administrator
+Webapp . 
 
 By `Buckapi` [www.Buckapi.com](https://wwww.buckapi.com).

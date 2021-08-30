@@ -30,7 +30,7 @@ const routes: Routes = [
         component: DentistviewComponent
     },
     {
-        path: 'patients',
+        path: 'suscriptores',
         component: PatientsComponent
     }
 ];

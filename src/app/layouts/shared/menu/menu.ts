@@ -18,21 +18,12 @@ export const MENU: MenuItem[] = [
         label: 'Apps',
         isTitle: true
     },
-    {
-        label: 'Dentistas',
-        icon: 'users',
-        link: '/dentists',
-    },
       {
-        label: 'Pacientes',
+        label: 'Suscriptores',
         icon: 'users',
-        link: '/patients',
+        link: '/suscriptores',
     }, 
-    {
-        label: 'Ajustes de Aplicación',
-        icon: 'settings',
-        link: '/settingsapp',
-    },    
+      
     // {
     //     label: 'Email',
     //     icon: 'inbox',

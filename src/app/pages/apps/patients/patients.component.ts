@@ -5,6 +5,7 @@ import { revenueAreaChart, targetsBarChart, salesDonutChart, ordersData } from '
 import { ChartType, OrdersTable } from './patients.model';
 import { DataApiService } from '../../../core/services/data-api.service';
 import { UserInterface } from '../../../core/models/user-interface'; 
+import { SuscriberInterface } from '../../../core/models/suscriber-interface'; 
 import { UserWService } from "../../../core/services/user-w.service";
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
@@ -30,8 +31,8 @@ export class PatientsComponent implements OnInit {
   targetsBarChart: ChartType;
   salesDonutChart: ChartType;
   ordersData: OrdersTable[];
-  getAllPatients(){
-        this.dataApi.getAllPatientsReturn().subscribe((res:any) => {
+  getAllSuscribers(){
+        this.dataApi.getAllSuscribersReturn().subscribe((res:any) => {
       if (res[0] === undefined){
         console.log("hey");
        }else{
@@ -41,8 +42,8 @@ export class PatientsComponent implements OnInit {
     }
 
   ngOnInit() {
-         this.getAllPatients();
-    this.breadCrumbItems = [{ label: 'Pacientes', active: true }];
+         this.getAllSuscribers();
+    this.breadCrumbItems = [{ label: 'Suscriptores', active: true }];
 
     /**
      * Fetches the data
