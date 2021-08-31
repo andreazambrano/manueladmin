@@ -22,6 +22,11 @@ export const MENU: MenuItem[] = [
         label: 'Suscriptores',
         icon: 'users',
         link: '/suscriptores',
+    },      
+     {
+        label: 'Cursos',
+        icon: 'inbox',
+        link: '/courses',
     }, 
       
     // {

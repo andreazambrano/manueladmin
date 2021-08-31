@@ -10,7 +10,7 @@ export interface TixInterface{
 	dificulty?:string;
 	disponibilidad?:string;
 	distancia?:string;
-	duracion?:string;
+	duration?:string;
 	images?: Array<string>;
 	notes?:string;
 	precio?:number;

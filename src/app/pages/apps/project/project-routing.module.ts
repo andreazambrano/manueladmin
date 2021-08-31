@@ -6,7 +6,7 @@ import { ProjectdetailComponent } from './projectdetail/projectdetail.component'
 
 const routes: Routes = [
     {
-        path: 'project-list',
+        path: 'courses',
         component: ProjectlistComponent
     },
     {
