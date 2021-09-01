@@ -1,14 +1,14 @@
 <div class="container-fluid">
-    <app-page-title title="New project" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+    <app-page-title title="Nuevo curso" [breadcrumbItems]="breadCrumbItems"></app-page-title>
 
     <div class="row">
         <div class="col-12">
            
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title mt-0 mb-1">Project's images</h4>
+                    <h4 class="header-title mt-0 mb-1">Imagen del curso</h4>
                     <p class="text-muted font-13 m-b-30">
-                        Drag and drop the project's images.
+                        Arrastra y pega la imagen del curso
                     </p>
                      <ngx-file-picker
                 [uploadType]="'multi'"
@@ -28,43 +28,47 @@
 
 
 
-              <label>Tittle</label>
+              <label>Titulo del curso</label>
               <input type="text" class="form-control" formControlName="tittle"
-                [ngClass]="{'is-invalid': typesubmit && type.tittle.errors}" placeholder="The project tittle" />
+                [ngClass]="{'is-invalid': typesubmit && type.tittle.errors}" placeholder="Titulo del curso" />
               <div *ngIf="typesubmit && type.tittle.errors" class="invalid-feedback">
-                <span *ngIf="type.tittle.errors.required">This value is required.</span>
+                <span *ngIf="type.tittle.errors.required">Este campo es requerido.</span>
               </div>
             </div>
            
             <div class="form-group">
-              <label>Category</label>
+              <label>Precio</label>
               <div>
-                <input formControlName="category" type="text" class="form-control"
-                  [ngClass]="{'is-invalid': typesubmit && type.category.errors}"
-                  placeholder="Enter the project category" />
-                <div *ngIf="typesubmit && type.category.errors" class="invalid-feedback">
-                  <span *ngIf="type.category.errors.required">This value is required.</span>
-                  <span *ngIf="type.category.errors.pattern">This value should be alphanumeric.</span>
+                <input formControlName="costPrice" type="text" class="form-control"
+                  [ngClass]="{'is-invalid': typesubmit && type.costPrice.errors}"
+                  placeholder="precio del curso" />
+                <div *ngIf="typesubmit && type.costPrice.errors" class="invalid-feedback">
+                  <span *ngIf="type.costPrice.errors.required">Este campo es requerido.</span>
+               
                 </div>
               </div>
             </div>
+
+
+
+
             <div class="form-group">
-              <label>Description</label>
+              <label>Descripcion</label>
               <div>
                 <textarea formControlName="description" class="form-control" rows="5"
                   [ngClass]="{'is-invalid': typesubmit && type.description.errors}"></textarea>
                 <div *ngIf="typesubmit && type.description.errors" class="invalid-feedback">
-                  <span *ngIf="type.description.errors.required">This value is required.</span>
+                  <span *ngIf="type.description.errors.required">Este campo es requerido.</span>
                 </div>
               </div>
             </div>
             <div class="form-group mb-0">
               <div>
                 <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
-                  Submit
+                  Aceptar
                 </button>
                 <button type="reset" class="btn btn-secondary waves-effect">
-                  Cancel
+                  Cancelar
                 </button>
               </div>
             </div>

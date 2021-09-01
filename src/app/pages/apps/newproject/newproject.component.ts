@@ -41,7 +41,14 @@ public formBuilder: FormBuilder,
   	) { }
    public isError = false;
     public tixs:TixInterface;
-    public tix:TixInterface;
+//    public tix:TixInterface;
+  public tix:TixInterface ={
+    tittle:"",
+    description:"",    
+    images:[],
+    modules:[],
+    costPrice:""
+  };
   public pagoImage:any[]=[];
   public images:any[]=[];
 
@@ -57,11 +64,12 @@ public formBuilder: FormBuilder,
       // let val=(this.user.id).toString();
       this.tix = this.typeValidationForm.value;
       // this.tix.userd="a"+val;
+      this.tix.modules = [];
       this.tix.status="activated";
       this.tix.images=this._uw.images;
       return this.dataApiService.saveTixFree(this.tix)
         .subscribe(
-             tix => this.router.navigate(['/projects'])
+             tix => this.router.navigate(['/courses'])
         );
   }    
     
@@ -88,11 +96,11 @@ public formBuilder: FormBuilder,
 
 
 
-  ngOnInit() {this._uw.images=[];
-  this.breadCrumbItems = [ { label: 'Projects', path: '/projects' }, { label: 'New project', path: '/', active: true }];
+  ngOnInit() {this._uw.images=[];this.tix.modules=[];
+  this.breadCrumbItems = [ { label: 'Cursos', path: '/courses' }, { label: 'Nuevo curso', path: '/', active: true }];
       this.typeValidationForm = this.formBuilder.group({
       tittle: ['', [Validators.required]],
-      category: ['', [Validators.required]],
+      costPrice: ['', [Validators.required]],
       description: ['', [Validators.required]]
         });
      // this.ngFormSendPago = this.formBuilder.group({
@@ -122,7 +130,7 @@ public formBuilder: FormBuilder,
   }
   onFileAdded(file: FilePreviewModel) {
     
-    file.fileName="https://db.penguinscleaning.ca:80/imgPenguins/server/local-storage/tixsImages/"+file.fileName;
+    file.fileName="https://db.buckapi.com:80/imgManuelramos/server/local-storage/tixsImages/"+file.fileName;
     this.myFiles.push(file);
     // this.images.push(file.fileName);
 
