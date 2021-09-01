@@ -41,13 +41,13 @@ export class DataApiService {
   		"Content-Type":"application/json"
   	
   		});
- //  	updateTix(tix :TixInterface, id: string){
-	// 	// let token = this.authService.getToken();
-	// 	const url_api=`https://db.buckapi.com:3025/api/tixes/${id}`;
-	// 	return this.http
-	// 	.put<TixInterface>(url_api, tix)
-	// 	.pipe(map(data => data));
-//}
+  	updateTix(tix :TixInterface, id: string){
+		// let token = this.authService.getToken();
+		const url_api=`https://db.buckapi.com:3062/api/tixes/${id}`;
+		return this.http
+		.put<TixInterface>(url_api, tix)
+		.pipe(map(data => data));
+}
 	getAllTixs(){
 		const url_api = 'hhttps://db.buckapi.com:3062/api/tixes?filter[where][status]=activated';
 		return this.http.get(url_api);

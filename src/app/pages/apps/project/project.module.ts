@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UIModule } from '../../../shared/ui/ui.module';
 
@@ -11,6 +12,8 @@ import { ProjectdetailComponent } from './projectdetail/projectdetail.component'
 
 @NgModule({
     imports: [
+     FormsModule,
+        ReactiveFormsModule,
         CommonModule,
         UIModule,
         ProjectRoutingModule,

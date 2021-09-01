@@ -13,11 +13,10 @@ export interface TixInterface{
 	distancia?:string;
 	duration?:string;
 	images?: Array<string>;
-	modules?: Array<string>;
+	modules?: Array<any>;
 	notes?:string;
 	precio?:number;
 	productName?:string;
-	link?:string;
 	status?:string;
 	temp?:string;
 	tips?:string;
