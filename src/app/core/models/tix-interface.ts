@@ -17,6 +17,7 @@ export interface TixInterface{
 	notes?:string;
 	precio?:number;
 	productName?:string;
+	link?:string;
 	status?:string;
 	temp?:string;
 	tips?:string;

@@ -138,6 +138,12 @@ export class DataApiService {
 		const url_api=`https://db.buckapi.com:3062/api/dentist/${indice}`;
 		this.dentist = this.http.get(url_api);
 		return (this.dentist);
+	}	
+	getCourseDetailById(id:string){
+		let indice = id;
+		const url_api=`https://db.buckapi.com:3062/api/tixes/${indice}`;
+		this.dentist = this.http.get(url_api);
+		return (this.dentist);
 	}
 	
 	getOrderByNpedido(npedido: string){
